@@ -3,8 +3,13 @@ package domain;
 public class Community {
 	private int communityId;
 	private int typeId;
-	private char communityNo;
-	private char communityPwd;
+	private String communityNo;
+	private String communityPwd;
+	private String communityName;
+	private String communityIntro;
+	private String communityPicture;
+	private String tele;
+	private String email;
 
 	public int getCommunityId() {
 		return communityId;
@@ -22,65 +27,59 @@ public class Community {
 		this.typeId = typeId;
 	}
 
-	public char getCommunityNo() {
+	public String getCommunityNo() {
 		return communityNo;
 	}
 
-	public void setCommunityNo(char communityNo) {
+	public void setCommunityNo(String communityNo) {
 		this.communityNo = communityNo;
 	}
 
-	public char getCommunityPwd() {
+	public String getCommunityPwd() {
 		return communityPwd;
 	}
 
-	public void setCommunityPwd(char communityPwd) {
+	public void setCommunityPwd(String communityPwd) {
 		this.communityPwd = communityPwd;
 	}
 
-	public char getCommunityName() {
+	public String getCommunityName() {
 		return communityName;
 	}
 
-	public void setCommunityName(char communityName) {
+	public void setCommunityName(String communityName) {
 		this.communityName = communityName;
 	}
 
-	public char getCommunityIntro() {
+	public String getCommunityIntro() {
 		return communityIntro;
 	}
 
-	public void setCommunityIntro(char communityIntro) {
+	public void setCommunityIntro(String communityIntro) {
 		this.communityIntro = communityIntro;
 	}
 
-	public char getCommunityPicture() {
+	public String getCommunityPicture() {
 		return communityPicture;
 	}
 
-	public void setCommunityPicture(char communityPicture) {
+	public void setCommunityPicture(String communityPicture) {
 		this.communityPicture = communityPicture;
 	}
 
-	public char getTele() {
+	public String getTele() {
 		return tele;
 	}
 
-	public void setTele(char tele) {
+	public void setTele(String tele) {
 		this.tele = tele;
 	}
 
-	public char getEmail() {
+	public String getEmail() {
 		return email;
 	}
 
-	public void setEmail(char email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	private char communityName;
-	private char communityIntro;
-	private char communityPicture;
-	private char tele;
-	private char email;
 }

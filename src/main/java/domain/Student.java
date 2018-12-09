@@ -3,7 +3,13 @@ package domain;
 public class Student {
 	private int stuId;
 	private int classId;
-	private char stuNo;
+	private String stuNo;
+	private String stuPwd;
+	private String stuName;
+	private String stuSex;
+	private String hobby;
+	private String picture;
+	private String tele;
 
 	public int getStuId() {
 		return stuId;
@@ -21,66 +27,59 @@ public class Student {
 		this.classId = classId;
 	}
 
-	public char getStuNo() {
+	public String getStuNo() {
 		return stuNo;
 	}
 
-	public void setStuNo(char stuNo) {
+	public void setStuNo(String stuNo) {
 		this.stuNo = stuNo;
 	}
 
-	public char getStuPwd() {
+	public String getStuPwd() {
 		return stuPwd;
 	}
 
-	public void setStuPwd(char stuPwd) {
+	public void setStuPwd(String stuPwd) {
 		this.stuPwd = stuPwd;
 	}
 
-	public char getStuName() {
+	public String getStuName() {
 		return stuName;
 	}
 
-	public void setStuName(char stuName) {
+	public void setStuName(String stuName) {
 		this.stuName = stuName;
 	}
 
-	public char getStuSex() {
+	public String getStuSex() {
 		return stuSex;
 	}
 
-	public void setStuSex(char stuSex) {
+	public void setStuSex(String stuSex) {
 		this.stuSex = stuSex;
 	}
 
-	public char getHobby() {
+	public String getHobby() {
 		return hobby;
 	}
 
-	public void setHobby(char hobby) {
+	public void setHobby(String hobby) {
 		this.hobby = hobby;
 	}
 
-	public char getPicture() {
+	public String getPicture() {
 		return picture;
 	}
 
-	public void setPicture(char picture) {
+	public void setPicture(String picture) {
 		this.picture = picture;
 	}
 
-	public char getTele() {
+	public String getTele() {
 		return tele;
 	}
 
-	public void setTele(char tele) {
+	public void setTele(String tele) {
 		this.tele = tele;
 	}
-
-	private char stuPwd;
-	private char stuName;
-	private char stuSex;
-	private char hobby;
-	private char picture;
-	private char tele;
 }

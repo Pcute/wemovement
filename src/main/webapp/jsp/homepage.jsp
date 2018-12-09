@@ -94,20 +94,20 @@ pageEncoding="UTF-8"%>
 </div>
 
 <div id="by-3" style="margin-top:35px;">
-    <div id="by-3-1">
+    <div class="by-3-1">
         <img style="margin-bottom:15px; border-radius:10px;" src="frontimages/u=3828498285,893490428&fm=200&gp=0.jpg" width="200" height="100">
         <p><a href="#" ><strong>参与it杯足球赛，感受足球的魅力!!!</strong></a></p>
     </div>
-    <div id="by-3-2">
+    <div class="by-3-1">
         <img style="margin-bottom:15px; border-radius:10px;" src="frontimages/u=1080015646,883967438&fm=200&gp=0.jpg" width="200" height="100">
         <p><a href="#"><strong>微型马拉松，等你来跑</strong></a></p></div>
-    <div id="by-3-3">
+    <div class="by-3-1">
         <img style="margin-bottom:15px; border-radius:10px;" src="frontimages/u=1521148146,3204128521&fm=26&gp=0.jpg" width="200" height="100">
         <p><a href="#"><strong>微爱家教，传递你我的爱心</strong></a></p></div>
-    <div id="by-3-4">
+    <div class="by-3-1">
         <img style="margin-bottom:15px; border-radius:10px;" src="frontimages/u=1186607204,2519278005&fm=26&gp=0.jpg" width="200" height="100">
         <p><a href="#"><strong>麻丘慰问孤寡老人活动，关爱留守老人</strong></a></p></div>
-    <div id="by-3-5">
+    <div class="by-3-1">
         <img style="margin-bottom:15px; border-radius:10px;" src="frontimages/u=1444708298,1697505680&fm=200&gp=0.jpg" width="200" height="100">
         <p><a href="#"><strong>环保知识公宣活动，保护身边的环境</strong></a></p></div>
 </div>
@@ -121,21 +121,21 @@ pageEncoding="UTF-8"%>
     <span style="font-size:20px;"><strong>推/荐/活/动</strong></span>
 </div>
 
-<div id="by-3"  style="margin-top:35px; margin-bottom:35px;">
-    <div id="by-3-1">
+<div id="by-3a"  style="margin-top:35px; margin-bottom:35px;">
+    <div class="by-3-1">
         <img style="margin-bottom:15px; border-radius:10px;" src="frontimages/u=3655766096,1329621519&fm=26&gp=0.jpg" width="200" height="100">
         <p><a href="#"><strong>关爱小天使，关心白血病儿童志愿者活动</strong></a></p>
     </div>
-    <div id="by-3-2">
+    <div class="by-3-1">
         <img style="margin-bottom:15px; border-radius:10px;" src="frontimages/u=1792545078,3152700174&fm=26&gp=0.jpg" width="200" height="100">
         <p><a href="#"><strong>星语志愿服务辅导自闭儿童</strong></a></p></div>
-    <div id="by-3-3">
+    <div class="by-3-1">
         <img style="margin-bottom:15px; border-radius:10px;" src="frontimages/u=3116645539,1896361272&fm=26&gp=0.jpg" width="200" height="100">
         <p><a href="#"><strong>节能减耗，保卫蓝天宣传活动</strong></a></p></div>
-    <div id="by-3-4">
+    <div class="by-3-1">
         <img style="margin-bottom:15px; border-radius:10px;" src="frontimages/u=3174231579,153409507&fm=26&gp=0.jpg" width="200" height="100">
         <p><a href="#"><strong>安全校园，消防器材排查活动</strong></a></p></div>
-    <div id="by-3-5">
+    <div class="by-3-1">
         <img style="margin-bottom:15px; border-radius:10px;" src="frontimages/u=2285728192,3453047693&fm=200&gp=0.jpg" width="200" height="100">
         <p><a href="#"><strong>骑行健身，单车之家志愿者活动</strong></a></p></div>
 </div>

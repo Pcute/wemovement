@@ -11,7 +11,6 @@
     <base href="<%=basePath%>">
 </head>
 <body>
-<h2>Hello World!</h2>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta http-equiv="refresh" content="0;url=jsp/homepage.jsp"/>
 </body>

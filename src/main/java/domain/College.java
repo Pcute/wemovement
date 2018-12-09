@@ -2,6 +2,12 @@ package domain;
 
 public class College {
 	private int collegeId;
+	private String collegePwd;
+	private String collegeName;
+	private String collegeIntro;
+	private String picture;
+	private String tele;
+	private String email;
 
 	public int getCollegeId() {
 		return collegeId;
@@ -11,58 +17,51 @@ public class College {
 		this.collegeId = collegeId;
 	}
 
-	public char getCollegePwd() {
+	public String getCollegePwd() {
 		return collegePwd;
 	}
 
-	public void setCollegePwd(char collegePwd) {
+	public void setCollegePwd(String collegePwd) {
 		this.collegePwd = collegePwd;
 	}
 
-	public char getCollegeName() {
+	public String getCollegeName() {
 		return collegeName;
 	}
 
-	public void setCollegeName(char collegeName) {
+	public void setCollegeName(String collegeName) {
 		this.collegeName = collegeName;
 	}
 
-	public char getCollegeIntro() {
+	public String getCollegeIntro() {
 		return collegeIntro;
 	}
 
-	public void setCollegeIntro(char collegeIntro) {
+	public void setCollegeIntro(String collegeIntro) {
 		this.collegeIntro = collegeIntro;
 	}
 
-	public char getPicture() {
+	public String getPicture() {
 		return picture;
 	}
 
-	public void setPicture(char picture) {
+	public void setPicture(String picture) {
 		this.picture = picture;
 	}
 
-	public char getTele() {
+	public String getTele() {
 		return tele;
 	}
 
-	public void setTele(char tele) {
+	public void setTele(String tele) {
 		this.tele = tele;
 	}
 
-	public char getEmail() {
+	public String getEmail() {
 		return email;
 	}
 
-	public void setEmail(char email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	private char collegePwd;
-	private char collegeName;
-	private char collegeIntro;
-	private char picture;
-	private char tele;
-	private char email;
 }
