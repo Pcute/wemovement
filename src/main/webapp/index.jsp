@@ -12,6 +12,6 @@
 </head>
 <body>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <meta http-equiv="refresh" content="0;url=jsp/homepage.jsp"/>
+    <meta http-equiv="refresh" content="0;url=servlet/index.do"/>
 </body>
 </html>

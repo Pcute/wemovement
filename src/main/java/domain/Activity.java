@@ -12,7 +12,7 @@ public class Activity {
 	private String activityIntro;
 	private String activityPicture;
 	private Date signTime;
-	private Date dateTime;
+	private Date activityTime;
 
 	public int getActivityId() {
 		return activityId;
@@ -87,10 +87,10 @@ public class Activity {
 	}
 
 	public Date getDateTime() {
-		return dateTime;
+		return activityTime;
 	}
 
 	public void setDateTime(Date dateTime) {
-		this.dateTime = dateTime;
+		this.activityTime = dateTime;
 	}
 }

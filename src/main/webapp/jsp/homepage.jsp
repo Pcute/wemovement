@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 
@@ -53,11 +54,7 @@ pageEncoding="UTF-8"%>
     </div>
     </nav>
 </div>
-
-
-
-
-<div id="by-1" style="margin-bottom:35px;margin-top:65px;">
+    <div id="by-1" style="margin-bottom:35px;margin-top:65px;">
     <div id="myCarousel" class="carousel slide"  style="width:700px; height:300px;">
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0"></li>
@@ -94,6 +91,12 @@ pageEncoding="UTF-8"%>
 </div>
 
 <div id="by-3" style="margin-top:35px;">
+    <c:forEach var="newact" items="${actnew}">
+        <div class="by-3-1">
+            <img style="margin-bottom:15px; border-radius:10px;" src="${newact.activityPicture}" width="200" height="100">
+            <p><a href="#" ><strong>${newact.activityIntro}</strong></a></p>
+        </div>
+    </c:forEach>
     <div class="by-3-1">
         <img style="margin-bottom:15px; border-radius:10px;" src="frontimages/u=3828498285,893490428&fm=200&gp=0.jpg" width="200" height="100">
         <p><a href="#" ><strong>参与it杯足球赛，感受足球的魅力!!!</strong></a></p>
@@ -122,6 +125,12 @@ pageEncoding="UTF-8"%>
 </div>
 
 <div id="by-3a"  style="margin-top:35px; margin-bottom:35px;">
+    <c:forEach var="actrecomm" items="${actrecomm}">
+        <div class="by-3-1">
+            <img style="margin-bottom:15px; border-radius:10px;" src="${actrecomm.activityPiciture}" width="200" height="100">
+            <p><a href="#"><strong>${actrecomm.activityTime}</strong></a></p>
+        </div>
+    </c:forEach>
     <div class="by-3-1">
         <img style="margin-bottom:15px; border-radius:10px;" src="frontimages/u=3655766096,1329621519&fm=26&gp=0.jpg" width="200" height="100">
         <p><a href="#"><strong>关爱小天使，关心白血病儿童志愿者活动</strong></a></p>
