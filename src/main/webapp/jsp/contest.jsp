@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: 17878
   Date: 2018/12/9
-  Time: 15:02
+  Time: 19:38
   To change this template use File | Settings | File Templates.
 --%>
 <%
@@ -17,13 +17,43 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link href="/css/enroll.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        html{
+            position:relative;
+            min-height:100%;}
+        body{
+            width:100%;
+            margin-bottom:60px;
+        }
+        img{
+            box-shadow: 2px 2px 2px #CCC;
+        }
+        a{
+            color:#000;}
+        a:hover{
+            color:#F00;
+            text-decoration:none;
+        }
+        .navbar-default .navbar-nav{
+            text-align:center;
+            float:none;}
+        .navbar-default .navbar-nav li{
+            display:inline-block;
+            float:none;}
+        #foot{
+            position:absolute;
+            bottom:0;
+            width:100%;
+            height:60px;
+            background-color:#f5f5f5;
+        }
+    </style>
 </head>
 <body>
 <div id="body">
 
     <div id="head" class="row">
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-image:url(/images/joinbackground.jpg)">
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color:#BFF4D4">
             <div class="container-fluid">
                 <div class="navbar-header col-lg-1 col-md-1 col-sm-1 col-xs-1" >
                     <strong><a class="navbar-brand " href="jsp/homepage.jsp">微&nbsp;&nbsp;&nbsp;动</a></strong>
@@ -47,35 +77,8 @@
         </nav>
     </div><!--head-->
 
-    <div class="top">
-        <div class="top-0"></div><!--没有内容，撑导航栏-->
-        <div class="top-1">
-            <span><strong><font size="+2" color="#FFFFFF">心理讲座</font></strong></span><br />
-            <span><font size="-1" color="#FFFFFF">时间:2018.12.12-2018.12.23</font></span><br />
-            <span><font size="-1" color="#FFFFFF">地点:先骕楼x3513a</font></span><br />
-            <span><font size="-1" color="#FFFFFF">发起方:心理协会</font></span><br />
-            <span><font size="-1" color="#FFFFFF">审核状态:审核通过</font></span><br />
-        </div>
-        <div class="top-2">
-            <button class="button" name="" type="submit">
-                我要报名
-            </button>
-            <button class="button" name="" type="submit">
-                收藏活动
-            </button>
-        </div><!--top-2-->
-    </div><!--top-->
 
-    <div class="middle_content">
-        <span><font size="+1">活动名称:心理讲座</font></span><br />
-        <span><font size="+1">活动编号:001</font></span><br />
-        <span><font size="+1">活动主题:探究人的内心深处</font></span><br />
-        <span><font size="+1">活动人数:50人以内</font></span><br />
-        <span><font size="+1">活动详情:由心理协会主办的心理讲座，主要通过给参与人员放映有关人心理活动的电影来引导人们思考有关于自己的心理变化</font></span>
-
-    </div><!--middle_content-->
-
-    <div class="foot" style="margin-top:35px;">
+    <div id="foot" style="margin-top:35px;">
         <nav class="navbar navbar-default navbar-fixed-bottm" role="navigation">
             <div class="container-fluid">
                 <ul class="nav navbar-nav nav-tabs-justified">

@@ -1,4 +1,4 @@
-package dao.daoimpl;
+package dao.impl;
 
 import dao.ActivityDAO;
 import domain.Activity;
@@ -25,4 +25,11 @@ public class ActivityDAOimplTest {
 		act=dao.getRecommdation(5);
 		assertNotNull(act);
 	}
+	//@Test
+	/*public void getClass(){
+		ActivityDAO dao=new ActivityDAOimpl();
+		List<Activity> act=null;
+		act=dao.getClass(3);
+		assertNotNull(act);
+	}*/
 }

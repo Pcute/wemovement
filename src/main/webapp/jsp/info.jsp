@@ -5,9 +5,14 @@
   Time: 13:24
   To change this template use File | Settings | File Templates.
 --%>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <base href="<%=basePath%>">
     <title>微动</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
@@ -19,13 +24,13 @@
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color:#8DC4F8">
         <div class="container-fluid">
             <div class="navbar-header col-lg-1 col-md-1 col-sm-1 col-xs-1" >
-                <strong><a class="navbar-brand " href="#">微&nbsp;&nbsp;&nbsp;动</a></strong>
+                <strong><a class="navbar-brand " href="jsp/homepage.jsp">微&nbsp;&nbsp;&nbsp;动</a></strong>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                 <ul class="nav navbar-nav " style="float:left;">
-                    <li><a href="#" >&nbsp;&nbsp;社&nbsp;团&nbsp;&nbsp;</a></li>
-                    <li><a href="#">&nbsp;活&nbsp;动&nbsp;&nbsp;</a></li>
-                    <li><a href="#">&nbsp;比&nbsp;赛</a></li>
+                    <li><a href="jsp/community.jsp" >&nbsp;&nbsp;社&nbsp;团&nbsp;&nbsp;</a></li>
+                    <li><a href="jsp/activity.jsp">&nbsp;活&nbsp;动&nbsp;&nbsp;</a></li>
+                    <li><a href="jsp/contest.jsp">&nbsp;比&nbsp;赛</a></li>
                 </ul>
             </div>
             <form class="navbar-form " role="search">

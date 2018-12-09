@@ -32,13 +32,13 @@ pageEncoding="UTF-8"%>
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color: #8DC4F8">
             <div class="container-fluid">
                 <div class="navbar-header col-lg-1 col-md-1 col-sm-1 col-xs-1" >
-                    <strong><a class="navbar-brand " href="homepage.html">微&nbsp;&nbsp;&nbsp;动</a></strong>
+                    <strong><a class="navbar-brand " href="jsp/homepage.jsp">微&nbsp;&nbsp;&nbsp;动</a></strong>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                     <ul class="nav navbar-nav " style="float:left;">
-                        <li><a href="massorganizations.html" >&nbsp;&nbsp;社&nbsp;团&nbsp;&nbsp;</a></li>
-                        <li><a href="activity.html">&nbsp;活&nbsp;动&nbsp;&nbsp;</a></li>
-                        <li><a href="information.html">&nbsp;比&nbsp;赛</a></li>
+                        <li><a href="jsp/community.jsp" >&nbsp;&nbsp;社&nbsp;团&nbsp;&nbsp;</a></li>
+                        <li><a href="jsp/activity.jsp">&nbsp;活&nbsp;动&nbsp;&nbsp;</a></li>
+                        <li><a href="jsp/contest.jsp">&nbsp;比&nbsp;赛</a></li>
                     </ul>
                 </div>
                 <form class="navbar-form " role="search">
@@ -86,7 +86,7 @@ pageEncoding="UTF-8"%>
 
 
 
-<div id="by-2" style="margin-bottom:35px;">
+<div class="by-2" style="margin-bottom:35px;">
     <span style="font-size:20px;"><strong>最/新/活/动</strong></span>
 </div>
 
@@ -120,7 +120,7 @@ pageEncoding="UTF-8"%>
 
 
 
-<div id="by-2" style="margin-top:35px;">
+<div class="by-2" style="margin-top:35px;">
     <span style="font-size:20px;"><strong>推/荐/活/动</strong></span>
 </div>
 
@@ -152,7 +152,7 @@ pageEncoding="UTF-8"%>
 
 <hr width="80%" size="2" color="#CCCCCC">
 
-<div id="by-2" style="margin-top:35px;">
+<div class="by-2" style="margin-top:35px;">
     <span style="font-size:20px;"><strong>活/跃/社/团</strong></span>
 </div>
 

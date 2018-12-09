@@ -1,7 +1,7 @@
 package servlet;
 
 import dao.ActivityDAO;
-import dao.daoimpl.ActivityDAOimpl;
+import dao.impl.ActivityDAOimpl;
 import domain.Activity;
 
 import javax.servlet.ServletException;
