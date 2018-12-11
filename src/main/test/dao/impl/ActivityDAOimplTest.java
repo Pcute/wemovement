@@ -15,7 +15,8 @@ public class ActivityDAOimplTest {
 		ActivityDAOimpl dao=new ActivityDAOimpl();
 		List<Activity> act=null;
 		act=dao.getNew(5);
-		assertNotNull(act);
+		assertEquals(5,act.size());
+
 	}
 
 	@Test

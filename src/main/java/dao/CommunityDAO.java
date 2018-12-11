@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface CommunityDAO {
 	public List<Community> getComClass(int id);
+	public List<Community> getAll();
+
 }

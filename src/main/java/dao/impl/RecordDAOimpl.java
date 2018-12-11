@@ -18,10 +18,30 @@ public class RecordDAOimpl implements RecordDAO {
 		List<Record>list =null;
 		try {
 			conn=JDBCUtil.getconn();
-			String sql="select ";
+			String sql="";
 		}catch (Exception e){
 
 		}finally {
+			JDBCUtil.close(conn,ps,rs);
+		}
+		return null;
+	}
+
+	@Override
+	public Record insert() {
+		Connection conn=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		Record record=new Record();
+		try {
+			conn=JDBCUtil.getconn();
+			String sql="intsert into ";
+			ps=conn.prepareStatement(sql);
+
+		}catch (Exception d){
+
+		}
+		finally {
 			JDBCUtil.close(conn,ps,rs);
 		}
 		return null;

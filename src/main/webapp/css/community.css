@@ -44,7 +44,7 @@ div.tab button.active{
     background-color:#ccc;}
 div.tab{
     overflow:hidden;}
-#by-2{
+.by-2{
     height:35px;
     width:600px;
     margin:0 auto;
@@ -52,13 +52,19 @@ div.tab{
     vertical-align:middle;
     letter-spacing:10px;
 }
-#by-3{
+.by-3{
     width:1440px;
     margin:0 auto;
     height:200px;
     padding-left:30px;
     font-size:15px;
     font-family:微软雅黑;
+}
+.by-3a{
+    float:left;
+    width:200px;
+    height:200px;
+    margin-left:40px;
 }
 #by-3-1{
     float:left;

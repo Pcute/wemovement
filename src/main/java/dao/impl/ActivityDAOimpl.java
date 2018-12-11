@@ -17,7 +17,7 @@ public class ActivityDAOimpl implements ActivityDAO {
 		PreparedStatement ps=null;
 		ResultSet rs=null;
 		List<Activity> list=new ArrayList();
-		list=null;
+	//	;
 		try{
 			conn= JDBCUtil.getconn();
 			String sql="select activity_picture,activity_name from activity\n" +
@@ -33,6 +33,7 @@ public class ActivityDAOimpl implements ActivityDAO {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+			list=null;
 		}finally {
 			JDBCUtil.close(conn,ps,rs);
 		}
@@ -45,7 +46,7 @@ public class ActivityDAOimpl implements ActivityDAO {
 		PreparedStatement ps=null;
 		ResultSet rs=null;
 		List<Activity> list=new ArrayList();
-		list=null;
+	//	list=null;
 		try{
 			conn= JDBCUtil.getconn();
 			String sql="select activity_picture,activity_name from activity\n" +
@@ -61,6 +62,7 @@ public class ActivityDAOimpl implements ActivityDAO {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+			list=null;
 		}finally {
 			JDBCUtil.close(conn,ps,rs);
 		}
@@ -72,8 +74,8 @@ public class ActivityDAOimpl implements ActivityDAO {
 		Connection conn=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
-		List<Activity> list=new ArrayList<>();
-		list=null;
+		List<Activity> list=new ArrayList<Activity>();
+
 		try{
 			conn=JDBCUtil.getconn();
 			String sql="select activity_picture,activity_name from activity where cla_id=?";
@@ -87,7 +89,7 @@ public class ActivityDAOimpl implements ActivityDAO {
 				list.add(act);
 			}
 		}catch (Exception e){
-
+			list=null;
 		}finally {
 			JDBCUtil.close(conn,ps,rs);
 		}

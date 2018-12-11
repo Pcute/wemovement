@@ -14,6 +14,14 @@ public class Activity {
 	private Date signTime;
 	private Date activityTime;
 
+	public Date getActivityTime() {
+		return activityTime;
+	}
+
+	public void setActivityTime(Date activityTime) {
+		this.activityTime = activityTime;
+	}
+
 	public int getActivityId() {
 		return activityId;
 	}
@@ -86,11 +94,5 @@ public class Activity {
 		this.signTime = signTime;
 	}
 
-	public Date getDateTime() {
-		return activityTime;
-	}
 
-	public void setDateTime(Date dateTime) {
-		this.activityTime = dateTime;
-	}
 }

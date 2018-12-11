@@ -33,12 +33,12 @@ pageEncoding="UTF-8"%>
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color: #8DC4F8">
             <div class="container-fluid">
                 <div class="navbar-header col-lg-1 col-md-1 col-sm-1 col-xs-1" >
-                    <strong><a class="navbar-brand " href="images/homepage.jsp">微&nbsp;&nbsp;&nbsp;动</a></strong>
+                    <strong><a class="navbar-brand " href="jsp/homepage.jsp">微&nbsp;&nbsp;&nbsp;动</a></strong>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                     <ul class="nav navbar-nav " style="float:left;">
-                        <li><a href="communityindex.do" >&nbsp;&nbsp;社&nbsp;团&nbsp;&nbsp;</a></li>
-                        <li><a href="activityindex.do">&nbsp;活&nbsp;动&nbsp;&nbsp;</a></li>
+                        <li><a href="jsp/community.jsp" >&nbsp;&nbsp;社&nbsp;团&nbsp;&nbsp;</a></li>
+                        <li><a href="jsp/activity.jsp">&nbsp;活&nbsp;动&nbsp;&nbsp;</a></li>
                         <li><a href="jsp/contest.jsp">&nbsp;比&nbsp;赛</a></li>
                     </ul>
                 </div>
@@ -95,10 +95,25 @@ pageEncoding="UTF-8"%>
     <c:forEach var="newact" items="${actnewList}">
         <div class="by-3-1">
             <img style="margin-bottom:15px; border-radius:10px;" src="${newact.activityPicture}" width="200" height="100">
-            <p><a href="#" ><strong>${newact.activityName}</strong></a></p>
+            <p><a href="#" ><strong>${newact.activityIntro}</strong></a></p>
         </div>
     </c:forEach>
-
+    <div class="by-3-1">
+        <img style="margin-bottom:15px; border-radius:10px;" src="frontimages/u=3828498285,893490428&fm=200&gp=0.jpg" width="200" height="100">
+        <p><a href="#" ><strong>参与it杯足球赛，感受足球的魅力!!!</strong></a></p>
+    </div>
+    <div class="by-3-1">
+        <img style="margin-bottom:15px; border-radius:10px;" src="frontimages/u=1080015646,883967438&fm=200&gp=0.jpg" width="200" height="100">
+        <p><a href="#"><strong>微型马拉松，等你来跑</strong></a></p></div>
+    <div class="by-3-1">
+        <img style="margin-bottom:15px; border-radius:10px;" src="frontimages/u=1521148146,3204128521&fm=26&gp=0.jpg" width="200" height="100">
+        <p><a href="#"><strong>微爱家教，传递你我的爱心</strong></a></p></div>
+    <div class="by-3-1">
+        <img style="margin-bottom:15px; border-radius:10px;" src="frontimages/u=1186607204,2519278005&fm=26&gp=0.jpg" width="200" height="100">
+        <p><a href="#"><strong>麻丘慰问孤寡老人活动，关爱留守老人</strong></a></p></div>
+    <div class="by-3-1">
+        <img style="margin-bottom:15px; border-radius:10px;" src="frontimages/u=1444708298,1697505680&fm=200&gp=0.jpg" width="200" height="100">
+        <p><a href="#"><strong>环保知识公宣活动，保护身边的环境</strong></a></p></div>
 </div>
 
 
@@ -114,11 +129,25 @@ pageEncoding="UTF-8"%>
     <c:forEach var="actrecomm" items="${actrecommList}">
         <div class="by-3-1">
             <img style="margin-bottom:15px; border-radius:10px;" src="${actrecomm.activityPicture}" width="200" height="100">
-            <p><a href="#"><strong>${actrecomm.activityName}</strong></a></p>
+            <p><a href="#"><strong>${actrecomm.activityName},${actrecomm.activityTime}</strong></a></p>
         </div>
     </c:forEach>
-
-
+    <div class="by-3-1">
+        <img style="margin-bottom:15px; border-radius:10px;" src="frontimages/u=3655766096,1329621519&fm=26&gp=0.jpg" width="200" height="100">
+        <p><a href="#"><strong>关爱小天使，关心白血病儿童志愿者活动</strong></a></p>
+    </div>
+    <div class="by-3-1">
+        <img style="margin-bottom:15px; border-radius:10px;" src="frontimages/u=1792545078,3152700174&fm=26&gp=0.jpg" width="200" height="100">
+        <p><a href="#"><strong>星语志愿服务辅导自闭儿童</strong></a></p></div>
+    <div class="by-3-1">
+        <img style="margin-bottom:15px; border-radius:10px;" src="frontimages/u=3116645539,1896361272&fm=26&gp=0.jpg" width="200" height="100">
+        <p><a href="#"><strong>节能减耗，保卫蓝天宣传活动</strong></a></p></div>
+    <div class="by-3-1">
+        <img style="margin-bottom:15px; border-radius:10px;" src="frontimages/u=3174231579,153409507&fm=26&gp=0.jpg" width="200" height="100">
+        <p><a href="#"><strong>安全校园，消防器材排查活动</strong></a></p></div>
+    <div class="by-3-1">
+        <img style="margin-bottom:15px; border-radius:10px;" src="frontimages/u=2285728192,3453047693&fm=200&gp=0.jpg" width="200" height="100">
+        <p><a href="#"><strong>骑行健身，单车之家志愿者活动</strong></a></p></div>
 </div>
 
 

@@ -8,8 +8,21 @@ public class Community {
 	private String communityName;
 	private String communityIntro;
 	private String communityPicture;
+
+
+
 	private String tele;
 	private String email;
+
+
+	public String getCommunityPicture() {
+		return communityPicture;
+	}
+
+	public void setCommunityPicture(String communityPicture) {
+		this.communityPicture = communityPicture;
+	}
+
 
 	public int getCommunityId() {
 		return communityId;
@@ -57,14 +70,6 @@ public class Community {
 
 	public void setCommunityIntro(String communityIntro) {
 		this.communityIntro = communityIntro;
-	}
-
-	public String getCommunityPicture() {
-		return communityPicture;
-	}
-
-	public void setCommunityPicture(String communityPicture) {
-		this.communityPicture = communityPicture;
 	}
 
 	public String getTele() {

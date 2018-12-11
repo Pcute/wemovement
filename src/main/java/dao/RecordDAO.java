@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface RecordDAO {
 	public List<Record> getAll();
+	public Record insert();
 }

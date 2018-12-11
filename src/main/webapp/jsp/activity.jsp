@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: 17878
@@ -26,7 +27,7 @@
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color:#BFF4D4">
             <div class="container-fluid">
                 <div class="navbar-header col-lg-1 col-md-1 col-sm-1 col-xs-1" >
-                    <strong><a class="navbar-brand " href="jsp/homepage.jsp">微&nbsp;&nbsp;&nbsp;动</a></strong>
+                    <strong><a class="navbar-brand " href="images/homepage.jsp">微&nbsp;&nbsp;&nbsp;动</a></strong>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                     <ul class="nav navbar-nav " style="float:left;">
@@ -48,7 +49,7 @@
     </div>
     <div id="top" style="margin-top:52px;">
         <div id="top-1">
-            <img src="avtivityicon.png" width="80" height="60"> <font size="+2"><strong>活动</strong></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="4">丰富多彩的活动</font>
+            <img src="images/avtivityicon.png" width="80" height="60"> <font size="+2"><strong>活动</strong></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="4">丰富多彩的活动</font>
         </div>
 
         <hr width="88%" size="5" noshade=true>
@@ -58,12 +59,13 @@
                 <ul>
                     <li> <strong>活动分类：</strong> </li>
                     <li class="active"><a href="javascript:void(0)" id="defaultOpen" class="tablinks" onClick="openCom(event,'theory')" style="margin-left:30px;">思想政治与道德修养</a><span></span></li>
-                    <li><a href="javascript:void(0)" class="tablinks" onClick="openCom(event,'technology')" style="margin-left:30px;">社会实践与志愿服务</a><span></span></li>
-                    <li><a href="javascript:void(0)" class="tablinks" onClick="openCom(event,'art')" style="margin-left:30px;">学术科技与创新创业</a><span></span></li>
-                    <li><a href="javascript:void(0)" class="tablinks" onClick="openCom(event,'sports')" style="margin-left:30px;">文化艺术与身心发展</a><span></span></li>
+                    <li><a href="javascript:void(0)" class="tablinks" onClick="openCom(event,'volunteer')" style="margin-left:30px;">社会实践与志愿服务</a><span></span></li>
+                    <li><a href="javascript:void(0)" class="tablinks" onClick="openCom(event,'academic')" style="margin-left:30px;">学术科技与创新创业</a><span></span></li>
+                    <li><a href="javascript:void(0)" class="tablinks" onClick="openCom(event,'art')" style="margin-left:30px;">文化艺术与身心发展</a><span></span></li>
                     <li><a href="javascript:void(0)" class="tablinks" onClick="openCom(event,'organizations')" style="margin-left:30px;">社团活动与社会工作</a><span></span></li>
                     <li><a href="javascript:void(0)" class="tablinks" onClick="openCom(event,'teach')" style="margin-left:30px;">教师教育与教学技能</a><span></span></li>
-                    <li><a href="javascript:void(0)" class="tablinks" onClick="openCom(event,'all')"   style="margin-left:30px;">技能培训与其他</a><span></span></li>
+                    <li><a href="javascript:void(0)" class="tablinks" onClick="openCom(event,'other')"   style="margin-left:30px;">技能培训与其他</a><span></span></li>
+                    <%--<li><a href="javascript:void(0)" class="tablinks" onClick="openCom(event,'all')"   style="margin-left:30px;">技能培训与其他</a><span></span></li>--%>
                 </ul>
             </div>
         </div>  <!--top-2 -->
@@ -84,279 +86,129 @@
             evt.currentTarget.className += " active";
         }
     </script>
-
-    <div id="all" class="tabcontent">
-        <div id="by-2" style="margin-bottom:10px;">
-            <span style="font-size:20px;"><strong></strong></span>
-        </div>
-        <div id="by-3" style="margin-top:20px;">
-            <div id="by-3-1">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=3250797564,3005981821&fm=26&gp=0.jpg" width="200" height="100">
-                <p><a href="#" ><strong>1111</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12</font>
-                <p><a href="#" ><font color="#999999" size="-1">普通话水平测试是对应试人运用普通话的规范程度、熟练程度的口语考试。考试形式为口试</font></a></p>
-            </div>
-            <div id="by-3-2">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=393338396,3843155276&fm=26&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>2222</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12</font>
-                <p><a href="#" ><font color="#999999" size="-1">由教育部考试中心主办，面向社会，用于考查应试人员计算机应用知识与技能的全国性计算机水平考试体系</font></a></p>
-            </div>
-            <div id="by-3-3">
-                <img style="margin-bottom:15px; border-radius:10px;" src="timg(3).jpg" width="200" height="100">
-                <p><a href="#"><strong>3333</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12</font>
-                <p><a href="#" ><font color="#999999" size="-1">大学英语四级考试是由国家教育部高等教育司主持的全国性英语考试</font></a></p>
-            </div>
-            <div id="by-3-4">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1186607204,2519278005&fm=26&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>4444</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12</font>
-                <p><a href="#" ><font color="#999999" size="-1">大学英语六级考试是由国家统一出题的，统一收费，统一组织考试，用来评定应试人英语能力的全国性的考试</font></a></p>
-            </div>
-            <div id="by-3-5">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1444708298,1697505680&fm=200&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong></strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12</font>
-                <p><a href="#" ><font color="#999999" size="-1">教师资格证考试，是由教育部考试中心官方设定的教师资格考试。</font></a></p>
-            </div>
-            <div id="by-3-5">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1444708298,1697505680&fm=200&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>学校素拓课外培训班:</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12</font>
-                <p><a href="#" ><font color="#999999" size="-1">学校举办的吉他、街舞等技能培训，颁发结业证</font></a></p>
-            </div>
-        </div>
-
-    </div> <!--其他的 -->
-
+        <%--思想政治与道德修养--%>
     <div id="theory" class="tabcontent">
-        <div id="by-2" style="margin-bottom:10px;">
+        <div class="by-2" style="margin-bottom:10px;">
             <span style="font-size:20px;"><strong></strong></span>
         </div>
-        <div id="by-3" style="margin-top:20px;">
-            <div id="by-3-1">
-                <a href="#" ><img style="margin-bottom:15px; border-radius:10px;" src="u=3828498285,893490428&fm=200&gp=0.jpg" width="200" height="100">
-                    <p><strong>心理讲座:</strong></p>
-                    <font size="-1" color="#999999">活动时间:2018.12.12</font>
-                    <p><font color="#999999" size="-1">弘扬和传承中华传统文化，繁荣和丰富校园文化生活</font></p>
-                </a>
-            </div>
-            <div id="by-3-2">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1080015646,883967438&fm=200&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>共青团团课:</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12</font>
-                <p><a href="#" ><font color="#999999" size="-1">协会主要以丰富多彩的户外活动为主，辅以心理讲座</font></a></p>
-            </div>
-            <div id="by-3-3">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1521148146,3204128521&fm=26&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>就业指导讲座:</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12</font>
-                <p><a href="#" ><font color="#999999" size="-1">实现自身价值与社会价值相统一，树立远大理想与艰苦奋斗统一的原则</font></a></p>
-            </div>
-            <div id="by-3-4">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1186607204,2519278005&fm=26&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>百家讲坛讲座:</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12</font>
-                <p><a href="#" ><font color="#999999" size="-1">想在一片更远的天空成长，请来我们怀里！扶桑花开，别再等待！</font></a></p>
-            </div>
-            <div id="by-3-5">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1444708298,1697505680&fm=200&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>党课宣讲:</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12</font>
-                <p><a href="#" ><font color="#999999" size="-1">以研究人文为基础，谈古论今</font></a></p>
-            </div>
-            <div id="by-3-5">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1015704753,1572170115&fm=26&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>国防讲座:</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12</font>
-                <p><a href="#" ><font color="#999999" size="-1">经典名著论坛，教授推荐好书</font></a></p>
-            </div>
+        <div class="by-3" style="margin-top:20px;">
+            <c:forEach var="act1" items="${actlist1}">
+                <div class="by-3a">
+                    <a href="#" ><img style="margin-bottom:15px; border-radius:10px;" src="${act1.activityPicture}" width="200" height="100">
+                        <p><strong>${act1.activityName}</strong></p>
+                        <font size="-1" color="#999999">活动时间:${act1.activityTime}</font>
+                        <p><font color="#999999" size="-1">${act1.activityIntro}</font></p>
+                    </a>
+                </div>
+            </c:forEach>
         </div>
 
-    </div><!--思想的 -->
-
-    <div id="technology" class="tabcontent">
-        <div id="by-2" style="margin-bottom:10px;">
+    </div>
+    <%--社会实践与志愿服务--%>
+    <div id="volunteer" class="tabcontent">
+        <div class="by-2" style="margin-bottom:10px;">
             <span style="font-size:20px;"><strong></strong></span>
         </div>
-        <div id="by-3" style="margin-top:20px;">
-            <div id="by-3-1">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=3828498285,893490428&fm=200&gp=0.jpg" width="200" height="100">
-                <p><a href="#" ><strong>校女生节活动：</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12-2018.12.30</font>
-                <p><a href="#" ><font color="#999999" size="-1">欢迎同学们踊跃参加我们的足球社，一起感受足球的魅力</font></a>=</p>
-            </div>
-            <div id="by-3-2">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1080015646,883967438&fm=200&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>党员下寝活动：</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12-2018.12.30</font>
-                <p><a href="#" ><font color="#999999" size="-1">学习日语，掌握日语，运用日语；走进文化，了解文化</font></a></p>
-            </div>
-            <div id="by-3-3">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1521148146,3204128521&fm=26&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>献血活动:</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12-2018.12.30</font>
-                <p><a href="#" ><font color="#999999" size="-1">全心全意为外语爱好者服务</font></a></p>
-            </div>
-            <div id="by-3-4">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1186607204,2519278005&fm=26&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>蓝天定向越野:</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12-2018.12.30</font>
-                <p><a href="#" ><font color="#999999" size="-1">进取、共赢、求实、创新</font></a></p>
-            </div>
-            <div id="by-3-5">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1444708298,1697505680&fm=200&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>敬老院活动:</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12-2018.12.30</font>
-                <p><a href="#" ><font color="#999999" size="-1">跃校园文化,丰富课余生活,在生活中寻找美、发现美、捕捉美</font></a></p>
-            </div>
-            <div id="by-3-5">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1015704753,1572170115&fm=26&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>书香晨光活动:</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12-2018.12.30</font>
-                <p><a href="#" ><font color="#999999" size="-1">以技能培训和实践锻炼为目的，会员们运用所学专业，学以致用</font></a></p>
-            </div>
+        <div class="by-3" style="margin-top:20px;">
+            <c:forEach var="act2" items="${actlist2}">
+                <div class="by-3a">
+                    <a href="#" ><img style="margin-bottom:15px; border-radius:10px;" src="${act2.activityPicture}" width="200" height="100">
+                        <p><strong>${act2.activityName}</strong></p>
+                        <font size="-1" color="#999999">活动时间:${act2.activityTime}</font>
+                        <p><font color="#999999" size="-1">${act2.activityIntro}</font></p>
+                    </a>
+                </div>
+            </c:forEach>
         </div>
 
-    </div><!--社会实践 -->
+    </div>
+    <%--学术科技与创新创业--%>
+    <div id="academic" class="tabcontent">
+        <div class="by-2" style="margin-bottom:10px;">
+            <span style="font-size:20px;"><strong></strong></span>
+        </div>
+        <div class="by-3" style="margin-top:20px;">
+            <c:forEach var="act3" items="${actlist3}">
+                <div class="by-3a">
+                    <a href="#" ><img style="margin-bottom:15px; border-radius:10px;" src="${act3.activityPicture}" width="200" height="100">
+                        <p><strong>${act3.activityName}</strong></p>
+                        <font size="-1" color="#999999">活动时间:${act3.activityTime}</font>
+                        <p><font color="#999999" size="-1">${act3.activityIntro}</font></p>
+                    </a>
+                </div>
+            </c:forEach>
+        </div>
 
+    </div>
+    <%--文化艺术与身心发展--%>
     <div id="art" class="tabcontent">
-        <div id="by-2" style="margin-bottom:10px;">
+        <div class="by-2" style="margin-bottom:10px;">
             <span style="font-size:20px;"><strong></strong></span>
         </div>
-        <div id="by-3" style="margin-top:20px;">
-            <div id="by-3-1">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=3828498285,893490428&fm=200&gp=0.jpg" width="200" height="100">
-                <p><a href="#" ><strong>校辩论赛:</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12-2018.12.30</font>
-                <p><a href="#" ><font color="#999999" size="-1">弘扬民族传统文化，普及京剧艺术</font></a></p>
-            </div>
-            <div id="by-3-2">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1080015646,883967438&fm=200&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>南昌学生魔方联赛:</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12-2018.12.30</font>
-                <p><a href="#" ><font color="#999999" size="-1">繁荣文学创作，弘扬人文精神</font></a></p>
-            </div>
-            <div id="by-3-3">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1521148146,3204128521&fm=26&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>MCM竞赛:</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12-2018.12.30</font>
-                <p><a href="#" ><font color="#999999" size="-1">推进高雅艺术，普及群众性艺术活动，提高广大同学艺术修养</font></a></p>
-            </div>
-            <div id="by-3-4">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1186607204,2519278005&fm=26&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>计算机团体天梯赛:</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12-2018.12.30</font>
-                <p><a href="#" ><font color="#999999" size="-1">在经典中传承，在墨香中进步</font></a></p>
-            </div>
-            <div id="by-3-5">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1444708298,1697505680&fm=200&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>大学生英语竞赛:</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12-2018.12.30</font>
-                <p><a href="#" ><font color="#999999" size="-1">千年技艺，你我传承</font></a></p>
-            </div>
-            <div id="by-3-5">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1015704753,1572170115&fm=26&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>高校金融挑战赛</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12-2018.12.30</font>
-                <p><a href="#" ><font color="#999999" size="-1">为热爱动漫的同学提供一个交流、学习、展示的平台</font></a></p>
-            </div>
+        <div class="by-3" style="margin-top:20px;">
+            <c:forEach var="act4" items="${actlist4}">
+                <div class="by-3a">
+                    <a href="#" ><img style="margin-bottom:15px; border-radius:10px;" src="${act4.activityPicture}" width="200" height="100">
+                        <p><strong>${act4.activityName}</strong></p>
+                        <font size="-1" color="#999999">活动时间:${act4.activityTime}</font>
+                        <p><font color="#999999" size="-1">${act4.activityIntro}</font></p>
+                    </a>
+                </div>
+            </c:forEach>
         </div>
 
-    </div><!--学术科技-->
-
-
-    <div id="sports" class="tabcontent">
-        <div id="by-2" style="margin-bottom:10px;">
-            <span style="font-size:20px;"><strong></strong></span>
-        </div>
-        <div id="by-3" style="margin-top:20px;">
-            <div id="by-3-1">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=3828498285,893490428&fm=200&gp=0.jpg" width="200" height="100">
-                <p><a href="#" ><strong>瑶湖杯足球赛:</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12-2018.12.30</font>
-                <p><a href="#" ><font color="#999999" size="-1">我们一起切磋球艺，我们一起以球会友</font></a></p>
-            </div>
-            <div id="by-3-2">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1080015646,883967438&fm=200&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>校女子拔河赛:</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12-2018.12.30</font>
-                <p><a href="#" ><font color="#999999" size="-1">加入文旅学院旅行者社团，参加各种有趣的活动</font></a></p>
-            </div>
-            <div id="by-3-3">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1521148146,3204128521&fm=26&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>微型马拉松赛:</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12-2018.12.30</font>
-                <p><a href="#" ><font color="#999999" size="-1">礼义廉耻，忍耐克己，百折不屈</font></a></p>
-            </div>
-            <div id="by-3-4">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1186607204,2519278005&fm=26&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>师大图书馆微小说征集:</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12-2018.12.30</font>
-                <p><a href="#" ><font color="#999999" size="-1">爱好读书，感受读书魅力</font></a></p>
-            </div>
-            <div id="by-3-5">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1444708298,1697505680&fm=200&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>蓝桥杯选拔测试:</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12-2018.12.30</font>
-                <p><a href="#" ><font color="#999999" size="-1">软院蓝桥杯选拔测试</font></a></p>
-            </div>
-            <div id="by-3-5">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1015704753,1572170115&fm=26&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>校心理话剧赛:</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12-2018.12.30</font>
-                <p><a href="#" ><font color="#999999" size="-1">心理协会举办的话剧大赛，欢迎大家踊跃参与</font></a></p>
-            </div>
-        </div>
-
-    </div><!--文化艺术-->
-
+    </div>
+    <%--社团活动与社会工作--%>
     <div id="organizations" class="tabcontent">
-        <div id="by-2" style="margin-bottom:10px;">
+        <div class="by-2" style="margin-bottom:10px;">
             <span style="font-size:20px;"><strong></strong></span>
         </div>
-        <div id="by-3" style="margin-top:20px;">
-            <div id="by-3-1">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=3828498285,893490428&fm=200&gp=0.jpg" width="200" height="100">
-                <p><a href="#" ><strong>i学习夜跑接力赛:</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12-2018.12.30</font>
-                <p><a href="#" ><font color="#999999" size="-1">我们一起切磋球艺，我们一起以球会友</font></a></p>
-            </div>
-            <div id="by-3-2">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1080015646,883967438&fm=200&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>瑶湖读史社团</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12-2018.12.30</font>
-                <p><a href="#" ><font color="#999999" size="-1">读史活动:</font></a></p>
-            </div>
-            <div id="by-3-3">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1521148146,3204128521&fm=26&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>刀画协会</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12-2018.12.30</font>
-                <p><a href="#" ><font color="#999999" size="-1">微课堂活动:</font></a></p>
-            </div>
-            <div id="by-3-4">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1186607204,2519278005&fm=26&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>蓝天社团</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12-2018.12.30</font>
-                <p><a href="#" ><font color="#999999" size="-1">地球一小时活动:</font></a></p>
-            </div>
-            <div id="by-3-5">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1444708298,1697505680&fm=200&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>国教学院</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12-2018.12.30</font>
-                <p><a href="#" ><font color="#9999999" size="-1">青春留学生交流会:</font></a></p>
-            </div>
-            <div id="by-3-5">
-                <img style="margin-bottom:15px; border-radius:10px;" src="u=1015704753,1572170115&fm=26&gp=0.jpg" width="200" height="100">
-                <p><a href="#"><strong>羽协</strong></a></p>
-                <font size="-1" color="#999999">活动时间:2018.12.12-2018.12.30</font>
-                <p><a href="#" ><font color="#999999" size="-1">理事层联谊活动:</font></a></p>
-            </div>
+        <div class="by-3" style="margin-top:20px;">
+            <c:forEach var="act5" items="${actlist5}">
+                <div class="by-3a">
+                    <a href="#" ><img style="margin-bottom:15px; border-radius:10px;" src="${act5.activityPicture}" width="200" height="100">
+                        <p><strong>${act5.activityName}</strong></p>
+                        <font size="-1" color="#999999">活动时间:${act5.activityTime}</font>
+                        <p><font color="#999999" size="-1">${act5.activityIntro}</font></p>
+                    </a>
+                </div>
+            </c:forEach>
         </div>
-
-    </div><!--社团活动-->
-
+    </div>
+    <%--教师教育与教学技能--%>
+    <div id="teach" class="tabcontent">
+        <div class="by-2" style="margin-bottom:10px;">
+            <span style="font-size:20px;"><strong></strong></span>
+        </div>
+        <div class="by-3" style="margin-top:20px;">
+            <c:forEach var="act6" items="${actlist6}">
+                <div class="by-3a">
+                    <a href="#" ><img style="margin-bottom:15px; border-radius:10px;" src="${act6.activityPicture}" width="200" height="100">
+                        <p><strong>${act6.activityName}</strong></p>
+                        <font size="-1" color="#999999">活动时间:${act6.activityTime}</font>
+                        <p><font color="#999999" size="-1">${act6.activityIntro}</font></p>
+                    </a>
+                </div>
+            </c:forEach>
+        </div>
+    </div>
+    <%--技能培训与其他--%>
+    <div id="other" class="tabcontent">
+        <div class="by-2" style="margin-bottom:10px;">
+            <span style="font-size:20px;"><strong></strong></span>
+        </div>
+        <div class="by-3" style="margin-top:20px;">
+            <c:forEach var="act7" items="${actlist7}">
+                <div class="by-3a">
+                    <a href="#" ><img style="margin-bottom:15px; border-radius:10px;" src="${act7.activityPicture}" width="200" height="100">
+                        <p><strong>${act7.activityName}</strong></p>
+                        <font size="-1" color="#999999">活动时间:${act7.activityTime}</font>
+                        <p><font color="#999999" size="-1">${act7.activityIntro}</font></p>
+                    </a>
+                </div>
+            </c:forEach>
+        </div>
+    </div>
     <div id="foot" style="margin-top:35px;">
         <nav class="navbar navbar-default navbar-fixed-bottm" role="navigation">
             <div class="container-fluid">
