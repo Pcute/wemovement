@@ -10,7 +10,8 @@
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
 <html>
 <head>
     <base href="<%=basePath%>">
@@ -22,31 +23,7 @@
 </head>
 <body>
 <div id="body">
-
-    <div id="head" class="row">
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color:#BFF4D4">
-            <div class="container-fluid">
-                <div class="navbar-header col-lg-1 col-md-1 col-sm-1 col-xs-1" >
-                    <strong><a class="navbar-brand " href="images/homepage.jsp">微&nbsp;&nbsp;&nbsp;动</a></strong>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                    <ul class="nav navbar-nav " style="float:left;">
-                        <li><a href="jsp/community.jsp" >&nbsp;&nbsp;社&nbsp;团&nbsp;&nbsp;</a></li>
-                        <li><a href="jsp/activity.jsp">&nbsp;活&nbsp;动&nbsp;&nbsp;</a></li>
-                        <li><a href="jsp/contest.jsp">&nbsp;比&nbsp;赛</a></li>
-                    </ul>
-                </div>
-                <form class="navbar-form " role="search">
-                    <div class="form-group col-lg-3 col-md-5 col-sm-5 col-xs-5">
-                        <input type="text" class="form-control input-sm" placeholder="Search">
-                        <button type="submit" class="btn btn-default btn-sm">搜索</button>
-                    </div>
-                </form>
-                <button style="float:right; margin-left:10px" type="button" class="btn btn-default  btn-sm">注册</button>
-                <button style="float:right; " type="button" class="btn btn-default btn-sm">登陆</button>
-            </div>
-        </nav>
-    </div>
+<%@include file="head.jsp"%>
     <div id="top" style="margin-top:52px;">
         <div id="top-1">
             <img src="images/avtivityicon.png" width="80" height="60"> <font size="+2"><strong>活动</strong></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font size="4">丰富多彩的活动</font>
@@ -94,7 +71,7 @@
         <div class="by-3" style="margin-top:20px;">
             <c:forEach var="act1" items="${actlist1}">
                 <div class="by-3a">
-                    <a href="#" ><img style="margin-bottom:15px; border-radius:10px;" src="${act1.activityPicture}" width="200" height="100">
+                    <a href="activityintro.do?id=${act1.activityId}" ><img style="margin-bottom:15px; border-radius:10px;" src="${act1.activityPicture}" width="200" height="100">
                         <p><strong>${act1.activityName}</strong></p>
                         <font size="-1" color="#999999">活动时间:${act1.activityTime}</font>
                         <p><font color="#999999" size="-1">${act1.activityIntro}</font></p>
@@ -112,7 +89,7 @@
         <div class="by-3" style="margin-top:20px;">
             <c:forEach var="act2" items="${actlist2}">
                 <div class="by-3a">
-                    <a href="#" ><img style="margin-bottom:15px; border-radius:10px;" src="${act2.activityPicture}" width="200" height="100">
+                    <a href="activityintro.do?id=${act2.activityId}" ><img style="margin-bottom:15px; border-radius:10px;" src="${act2.activityPicture}" width="200" height="100">
                         <p><strong>${act2.activityName}</strong></p>
                         <font size="-1" color="#999999">活动时间:${act2.activityTime}</font>
                         <p><font color="#999999" size="-1">${act2.activityIntro}</font></p>
@@ -130,7 +107,7 @@
         <div class="by-3" style="margin-top:20px;">
             <c:forEach var="act3" items="${actlist3}">
                 <div class="by-3a">
-                    <a href="#" ><img style="margin-bottom:15px; border-radius:10px;" src="${act3.activityPicture}" width="200" height="100">
+                    <a href="activityintro.do?id=${act3.activityId}" ><img style="margin-bottom:15px; border-radius:10px;" src="${act3.activityPicture}" width="200" height="100">
                         <p><strong>${act3.activityName}</strong></p>
                         <font size="-1" color="#999999">活动时间:${act3.activityTime}</font>
                         <p><font color="#999999" size="-1">${act3.activityIntro}</font></p>
@@ -148,7 +125,7 @@
         <div class="by-3" style="margin-top:20px;">
             <c:forEach var="act4" items="${actlist4}">
                 <div class="by-3a">
-                    <a href="#" ><img style="margin-bottom:15px; border-radius:10px;" src="${act4.activityPicture}" width="200" height="100">
+                    <a href="activityintro.do?id=${act4.activityId}" ><img style="margin-bottom:15px; border-radius:10px;" src="${act4.activityPicture}" width="200" height="100">
                         <p><strong>${act4.activityName}</strong></p>
                         <font size="-1" color="#999999">活动时间:${act4.activityTime}</font>
                         <p><font color="#999999" size="-1">${act4.activityIntro}</font></p>
@@ -166,7 +143,7 @@
         <div class="by-3" style="margin-top:20px;">
             <c:forEach var="act5" items="${actlist5}">
                 <div class="by-3a">
-                    <a href="#" ><img style="margin-bottom:15px; border-radius:10px;" src="${act5.activityPicture}" width="200" height="100">
+                    <a href="activityintro.do?id=${act5.activityId}" ><img style="margin-bottom:15px; border-radius:10px;" src="${act5.activityPicture}" width="200" height="100">
                         <p><strong>${act5.activityName}</strong></p>
                         <font size="-1" color="#999999">活动时间:${act5.activityTime}</font>
                         <p><font color="#999999" size="-1">${act5.activityIntro}</font></p>
@@ -183,7 +160,7 @@
         <div class="by-3" style="margin-top:20px;">
             <c:forEach var="act6" items="${actlist6}">
                 <div class="by-3a">
-                    <a href="#" ><img style="margin-bottom:15px; border-radius:10px;" src="${act6.activityPicture}" width="200" height="100">
+                    <a href="activityintro.do?id=${act6.activityId}" ><img style="margin-bottom:15px; border-radius:10px;" src="${act6.activityPicture}" width="200" height="100">
                         <p><strong>${act6.activityName}</strong></p>
                         <font size="-1" color="#999999">活动时间:${act6.activityTime}</font>
                         <p><font color="#999999" size="-1">${act6.activityIntro}</font></p>
@@ -200,7 +177,7 @@
         <div class="by-3" style="margin-top:20px;">
             <c:forEach var="act7" items="${actlist7}">
                 <div class="by-3a">
-                    <a href="#" ><img style="margin-bottom:15px; border-radius:10px;" src="${act7.activityPicture}" width="200" height="100">
+                    <a href="activityintro.do?id=${act7.activityId}" ><img style="margin-bottom:15px; border-radius:10px;" src="${act7.activityPicture}" width="200" height="100">
                         <p><strong>${act7.activityName}</strong></p>
                         <font size="-1" color="#999999">活动时间:${act7.activityTime}</font>
                         <p><font color="#999999" size="-1">${act7.activityIntro}</font></p>
@@ -209,20 +186,7 @@
             </c:forEach>
         </div>
     </div>
-    <div id="foot" style="margin-top:35px;">
-        <nav class="navbar navbar-default navbar-fixed-bottm" role="navigation">
-            <div class="container-fluid">
-                <ul class="nav navbar-nav nav-tabs-justified">
-                    <li><a href="#">联系我们</a></li>
-                    <li><a href="#">意见反馈</a></li>
-                    <li><a href="#">学校链接</a></li>
-                    <li><a href="#">企业合作</a></li>
-                    <li><a href="#">帮助中心</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-
+    <%@include file="foot.jsp"%>
 </div>
 <script>
     document.getElementById("defaultOpen").click();

@@ -51,46 +51,10 @@
 </head>
 <body>
 <div id="body">
-
-    <div id="head" class="row">
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="background-color:#BFF4D4">
-            <div class="container-fluid">
-                <div class="navbar-header col-lg-1 col-md-1 col-sm-1 col-xs-1" >
-                    <strong><a class="navbar-brand " href="jsp/homepage.jsp">微&nbsp;&nbsp;&nbsp;动</a></strong>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                    <ul class="nav navbar-nav " style="float:left;">
-                        <li><a href="jsp/community.jsp" >&nbsp;&nbsp;社&nbsp;团&nbsp;&nbsp;</a></li>
-                        <li><a href="jsp/activity.jsp">&nbsp;活&nbsp;动&nbsp;&nbsp;</a></li>
-                        <li><a href="jsp/contest.jsp">&nbsp;比&nbsp;赛</a></li>
-                    </ul>
-                </div>
-                <form class="navbar-form " role="search">
-                    <div class="form-group col-lg-3 col-md-5 col-sm-5 col-xs-5">
-                        <input type="text" class="form-control input-sm" placeholder="Search">
-                        <button type="submit" class="btn btn-default btn-sm">搜索</button>
-                    </div>
-                </form>
-                <button style="float:right; margin-left:10px" type="button" class="btn btn-default  btn-sm">注册</button>
-                <button style="float:right; " type="button" class="btn btn-default btn-sm">登陆</button>
-            </div>
-        </nav>
-    </div><!--head-->
+<%@include file="head.jsp"%>
 
 
-    <div id="foot" style="margin-top:35px;">
-        <nav class="navbar navbar-default navbar-fixed-bottm" role="navigation">
-            <div class="container-fluid">
-                <ul class="nav navbar-nav nav-tabs-justified">
-                    <li><a href="#">联系我们</a></li>
-                    <li><a href="#">意见反馈</a></li>
-                    <li><a href="#">学校链接</a></li>
-                    <li><a href="#">企业合作</a></li>
-                    <li><a href="#">帮助中心</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div><!--foot-->
+<%@include file="foot.jsp"%>
 </div><!--body-->
 </body>
 </html>

@@ -66,4 +66,28 @@ public class CommunityDAOimpl implements CommunityDAO {
 
 		return list;
 	}
+
+	@Override
+	public int insert(Community community) {
+		String sql="insert into community(community_name,community_pwd,email,community_intro) value(?,?,?,?)";
+
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs=null;
+		try {
+			conn=JDBCUtil.getconn();
+			ps = conn.prepareStatement(sql);
+
+			ps.setObject( 1, community.getCommunityName());
+			ps.setObject( 2, community.getCommunityPwd());
+			ps.setObject(3,community.getEmail());
+			ps.setObject(4,community.getCommunityIntro());
+			return ps.executeUpdate();      //修改成功返回1
+		} catch (Exception e) {
+
+		} finally {
+			JDBCUtil.close(conn,ps,rs);
+		}
+		return 0;
+	}
 }

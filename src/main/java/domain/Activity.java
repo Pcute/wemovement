@@ -9,10 +9,15 @@ public class Activity {
 	private int iniId;
 	private String iniType;
 	private String iniName;
+	private  String activityTopic;
 	private String activityIntro;
 	private String activityPicture;
+	private  String peopleNum;
+	private  String address;
 	private Date signTime;
 	private Date activityTime;
+	private String activityState;
+	private String activityAudit;
 
 	public Date getActivityTime() {
 		return activityTime;
@@ -70,6 +75,14 @@ public class Activity {
 		this.iniName = iniName;
 	}
 
+	public String getActivityTopic() {
+		return activityTopic;
+	}
+
+	public void setActivityTopic(String activityTopic) {
+		this.activityTopic = activityTopic;
+	}
+
 	public String getActivityIntro() {
 		return activityIntro;
 	}
@@ -86,6 +99,22 @@ public class Activity {
 		this.activityPicture = activityPicture;
 	}
 
+	public String getPeopleNum() {
+		return peopleNum;
+	}
+
+	public void setPeopleNum(String peopleNum) {
+		this.peopleNum = peopleNum;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 	public Date getSignTime() {
 		return signTime;
 	}
@@ -94,5 +123,19 @@ public class Activity {
 		this.signTime = signTime;
 	}
 
+	public String getActivityState() {
+		return activityState;
+	}
 
+	public void setActivityState(String activityState) {
+		this.activityState = activityState;
+	}
+
+	public String getActivityAudit() {
+		return activityAudit;
+	}
+
+	public void setActivityAudit(String activityAudit) {
+		this.activityAudit = activityAudit;
+	}
 }
