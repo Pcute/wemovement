@@ -12,7 +12,8 @@ public class Activity {
 	private  String activityTopic;
 	private String activityIntro;
 	private String activityPicture;
-	private  String peopleNum;
+	private  int peopleNum;
+	private int peoNum;
 	private  String address;
 	private Date signTime;
 	private Date activityTime;
@@ -99,12 +100,20 @@ public class Activity {
 		this.activityPicture = activityPicture;
 	}
 
-	public String getPeopleNum() {
+	public int getPeopleNum() {
 		return peopleNum;
 	}
 
-	public void setPeopleNum(String peopleNum) {
+	public void setPeopleNum(int peopleNum) {
 		this.peopleNum = peopleNum;
+	}
+
+	public int getPeoNum() {
+		return peoNum;
+	}
+
+	public void setPeoNum(int peoNum) {
+		this.peoNum = peoNum;
 	}
 
 	public String getAddress() {

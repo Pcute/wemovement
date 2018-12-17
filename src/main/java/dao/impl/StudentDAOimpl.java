@@ -54,4 +54,42 @@ public class StudentDAOimpl implements StudentDAO {
         }
         return 0;
     }
+
+    @Override
+    public void update(Student student) throws Exception {
+        Connection conn=null;
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        try {
+            conn=JDBCUtil.getconn();
+            String sql="update student set stu_sex=?,hobby=?,picture=?" +
+                    "tele=? where stu_No=student.stuNo";
+            ps=conn.prepareStatement(sql);
+            ps.setObject(1,student.getStuSex());
+            ps.setObject(2,student.getHobby());
+            ps.setObject(3,student.getPicture());
+            ps.setObject(4,student.getTele());
+            ps.executeUpdate();
+
+        }finally {
+            JDBCUtil.close(conn,ps,rs);
+        }
+    }
+
+    @Override
+    public void resetPwd(int id,String pwd) throws Exception {
+        Connection conn=null;
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        try {
+            conn=JDBCUtil.getconn();
+            String sql="update student set stu_pwd=? where stu_id=id";
+            ps=conn.prepareStatement(sql);
+            ps.setObject(1,pwd);
+            ps.executeUpdate();
+
+        }finally {
+            JDBCUtil.close(conn,ps,rs);
+        }
+    }
 }

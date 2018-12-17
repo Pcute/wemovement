@@ -23,35 +23,35 @@
 <div id="body">
     <%--head头部--%>
     <%@include file="head.jsp"%>
-<div class="wrap" id="wrap">
-    <div class="logGet">
+        <div class="wrap" id="wrap">
+            <div class="logGet">
 
-        <div class="logD logDtip">
-            <p class="p1">登录</p>
-        </div>
+                <div class="logD logDtip">
+                    <p class="p1">登录</p>
+                </div>
+                <form action="login.do" method="post" name="login">
+                    <div class="lgD">
 
-        <div class="lgD">
-            <img src="" width="20" height="20" alt=""/>
-            <input type="text"
-                   placeholder="输入用户名" />
-        </div>
-        <div class="lgD">
-            <img src="" width="20" height="20" alt=""/>
-            <input type="text"
-                   placeholder="输入用户密码" />
-        </div>
-        <div class="lgF">
-            <input type="text" placeholder="输入验证码"/>
-            <img id="checkCode" class="refleshCheckCode" alt="点击更换验证码" src="imageServlet">
-            <a class="refleshCheckCode" href="javaScript:;"  >更换</a>
-        </div>
-        <div class="logC">
-            <a href="main.jsp" target="_self"><button>登 录</button></a>
-        </div>
-        <div class="logE"><a href="register.jsp">忘记密码</a></div>
+                        <input type="text" name="uName"
+                               placeholder="输入用户名" />
+                    </div>
+                    <div class="lgD">
 
-    </div>
-</div>
+                        <input type="text" name="uPwd"
+                               placeholder="输入用户密码" />
+                    </div>
+                    <div class="lgF">
+                        <input type="text" placeholder="输入验证码"/>
+                        <img id="checkCode" class="refleshCheckCode" alt="点击更换验证码" src="imageServlet">
+                        <a class="refleshCheckCode" href="javaScript:;"  >更换</a>
+                    </div>
+                    <div class="logC">
+                        <a target="_self"><button type="submit">登 录</button></a>
+                    </div>
+                    <div class="logE"><a href="regist.jsp">忘记密码</a></div>
+                </form>
+            </div>
+        </div>
         <%--foot尾部--%>
     <%@include file="foot.jsp"%>
 </div>

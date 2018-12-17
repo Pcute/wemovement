@@ -3,6 +3,8 @@ package dao;
 import domain.Student;
 
 public interface StudentDAO {
-    int insert(Student student);
-    int select(Student student);
+    public int insert(Student student);
+    public int select(Student student);
+    public void update(Student student) throws Exception;
+    public void resetPwd(int id,String pwd) throws Exception;
 }

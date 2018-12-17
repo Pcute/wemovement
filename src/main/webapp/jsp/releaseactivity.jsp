@@ -23,13 +23,14 @@
             <span><font size="+1"><strong>基本信息</strong></font></span>
         </div><!--basic_information_head-->
         <form>
-            <div class="information"><font>活动名称</font><input name="" type="text"  placeholder="清输入活动的名称" maxlength="10" /><br />
+            <div class="information"><font>活动名称</font><input name="actName" type="text"  placeholder="清输入活动的名称" maxlength="10" /><br />
             </div>
-            <div class="information"><font>报名时间</font><input name="" type="text" placeholder="写入活动报名时间：2018.12.1"></div>
-            <div class="information"><font>活动时间</font><input name="" type="text"
+            <div class="information"><font>报名时间</font><input name="actSignTime" type="text" placeholder="写入活动报名时间：2018.12.1"></div>
+            <div class="information"><font>活动时间</font><input name="actActTime" type="text"
                                                              placeholder="写入活动开始到结束时间:2018.12.1-2018.12.9" /><br />
             </div>
-            <div class="information"><font>活动地点</font><input name="" type="text" placeholder="写入活动举办地点" /><br /></div>
+            <div class="information"><font>活动地点</font><input name="actAdress" type="text" placeholder="写入活动举办地点" /><br /></div>
+            <div class="information"><font>活动人数</font><input name="peopleNum" type="text" placeholder="写入活动需要人数" /><br /></div>
             <div class="information_image">
                 <div class="information_image_left"> 活动图片</div>
                 <div class="information_image_center">
@@ -41,11 +42,11 @@
                     <font>2、图片的格式可以为png/jpg/jepg</font><br />
 
                     <a href="#"><button type="button" class="btn btn-block btn-primary btn-sm" onclick="driverUpload();">点击上传图片</button></a>
-                    <input type="file" id="input_upload_driver" style="display: none" accept="image/jpg, image/png, image/jpeg"  onChange="preview(this,'img_driver');">
+                    <input name="actImage" type="file" id="input_upload_driver" style="display: none" accept="image/jpg, image/png, image/jpeg"  onChange="preview(this,'img_driver');">
                 </div>
             </div>
-            <div class="information"><font>活动发起</font><input name="" type="text" placeholder="写入活动发起的单位或者个人信息" /><br /></div>
-            <div class="information"><font>活动详情</font><textarea name="" rows="10" cols="81" placeholder="写入活动的描述"></textarea></div>
+            <div class="information"><font>活动主题</font><input name="actTopic" type="text" placeholder="写入活动发起的单位或者个人信息" /><br /></div>
+            <div class="information"><font>活动详情</font><textarea name="actIntro" rows="10" cols="81" placeholder="写入活动的描述"></textarea></div>
         </form>
 
         <a href="#"><button class="btn btn-default btn-sm active" style="margin:20px 350px; " onClick="keptFuntion()" >点击保存信息</button></a>

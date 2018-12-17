@@ -92,7 +92,7 @@ public class ActivityDAOimpl implements ActivityDAO {
 				act.setActivityTopic(rs.getString(5));
 				act.setActivityIntro(rs.getString(6));
 				act.setActivityPicture(rs.getString(7));
-				act.setPeopleNum(rs.getString(8));
+				act.setPeopleNum(rs.getInt(8));
 				act.setAddress(rs.getString(9));
 				act.setSignTime(rs.getTime(10));
 				act.setActivityTime(rs.getTime(11));
@@ -130,7 +130,7 @@ public class ActivityDAOimpl implements ActivityDAO {
 				act.setActivityTopic(rs.getString(5));
 				act.setActivityIntro(rs.getString(6));
 				act.setActivityPicture(rs.getString(7));
-				act.setPeopleNum(rs.getString(8));
+				act.setPeopleNum(rs.getInt(8));
 				act.setAddress(rs.getString(9));
 				act.setSignTime(rs.getTime(10));
 				act.setActivityTime(rs.getTime(11));
@@ -152,27 +152,62 @@ public class ActivityDAOimpl implements ActivityDAO {
 		Connection conn=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
-		List<Activity> list= new ArrayList<Activity>();
+		//List<Activity> list= new ArrayList<Activity>();
 		try {
 			conn=JDBCUtil.getconn();
-			String sql="insert into activity (activity_name,ini_id,ini_type,ini_name,activity_topic,activity_intro,activity_picture,people_num,address,sign_time,activity_time,activity_state,activity_audit,cla_id) \n" +
-					"values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			String sql="insert into activity (cla_id,activity_name,ini_id,ini_type,ini_name,activity_topic,activity_intro,activity_picture,people_num,peo_num,address,sign_time,activity_time,activity_state,activity_audit) \n" +
+					"values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			ps=conn.prepareStatement(sql);
-			ps.setObject(1,act.getActivityName());
-			ps.setObject(2,act.getIniId());
-			ps.setObject(3,act.getIniType());
-			ps.setObject(4,act.getIniName());
-			ps.setObject(5,act.getActivityTopic());
-			ps.setObject(6,act.getActivityIntro());
-			ps.setObject(7,act.getActivityPicture());
-			ps.setObject(8,act.getPeopleNum());
-			ps.setObject(9,act.getAddress());
-			ps.setObject(10,act.getSignTime());
-			ps.setObject(11,act.getActivityTime());
-			ps.setObject(12,act.getActivityState());
-			ps.setObject(13,act.getActivityAudit());
-			ps.setObject(14,act.getClaId());
-			list.add(act);
+			ps.setObject(1,act.getClaId());
+			ps.setObject(2,act.getActivityName());
+			ps.setObject(3,act.getIniId());
+			ps.setObject(4,act.getIniType());
+			ps.setObject(5,act.getIniName());
+			ps.setObject(6,act.getActivityTopic());
+			ps.setObject(7,act.getActivityIntro());
+			ps.setObject(8,act.getActivityPicture());
+			ps.setObject(9,act.getPeopleNum());
+			ps.setObject(10,act.getPeoNum());
+			ps.setObject(11,act.getAddress());
+			ps.setObject(12,act.getSignTime());
+			ps.setObject(13,act.getActivityTime());
+			ps.setObject(14,act.getActivityState());
+			ps.setObject(15,act.getActivityAudit());
+			ps.executeUpdate();
+			//list.add(act);
+		}finally {
+			JDBCUtil.close(conn,ps,rs);
+		}
+	}
+
+	@Override
+	public void updateAct(Activity act) throws Exception {
+		Connection conn=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		//List<Activity> list= new ArrayList<Activity>();
+		try {
+			conn=JDBCUtil.getconn();
+			String sql="update  activity (cla_id,activity_name,ini_id,ini_type,ini_name,activity_topic,activity_intro,activity_picture,people_num,peo_num,address,sign_time,activity_time,activity_state,activity_audit) \n" +
+					"set (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) where activity_id=act.activity_id";
+			ps=conn.prepareStatement(sql);
+			ps.setObject(1,act.getClaId());
+			ps.setObject(2,act.getActivityName());
+			ps.setObject(3,act.getIniId());
+			ps.setObject(4,act.getIniType());
+			ps.setObject(5,act.getIniName());
+			ps.setObject(6,act.getActivityTopic());
+			ps.setObject(7,act.getActivityIntro());
+			ps.setObject(8,act.getActivityPicture());
+			ps.setObject(9,act.getPeopleNum());
+			ps.setObject(10,act.getPeoNum());
+			ps.setObject(11,act.getAddress());
+			ps.setObject(12,act.getSignTime());
+			ps.setObject(13,act.getActivityTime());
+			ps.setObject(14,act.getActivityState());
+			ps.setObject(15,act.getActivityAudit());
+			ps.executeUpdate();
+			//list.add(act);
 		}finally {
 			JDBCUtil.close(conn,ps,rs);
 		}
