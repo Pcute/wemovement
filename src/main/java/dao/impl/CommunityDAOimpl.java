@@ -20,15 +20,17 @@ public class CommunityDAOimpl implements CommunityDAO {
 		List<Community> list=new ArrayList<Community>();
 		try{
 			conn= JDBCUtil.getconn();
-			String sql="select community_picture,community_name,community_intro from community where type_id=?";
+			//String sql="select community_picture,community_name,community_intro from community where type_id=?";
+			String sql="select community_id,community_picture,community_name,community_intro from community where type_id=?";
 			ps=conn.prepareStatement(sql);
 			ps.setObject(1,id);
 			rs=ps.executeQuery();
 			while (rs.next()){
 				Community act =new Community();
-				act.setCommunityPicture(rs.getString(1));
-				act.setCommunityName(rs.getString(2));
-				act.setCommunityIntro(rs.getString(3));
+				act.setCommunityId(rs.getInt(1));
+				act.setCommunityPicture(rs.getString(2));
+				act.setCommunityName(rs.getString(3));
+				act.setCommunityIntro(rs.getString(4));
 				list.add(act);
 			}
 		}catch (Exception e){
@@ -48,7 +50,7 @@ public class CommunityDAOimpl implements CommunityDAO {
 		List<Community> list=new ArrayList<Community>();
 		try {
 			conn=JDBCUtil.getconn();
-			String sql="select community_picture,community_name ,community_intro from community";
+			String sql="select community_picture,community_name ,community_intro,community_id from community";
 			ps=conn.prepareStatement(sql);
 			rs=ps.executeQuery();
 			while (rs.next()){
@@ -56,6 +58,7 @@ public class CommunityDAOimpl implements CommunityDAO {
 				com.setCommunityPicture(rs.getString(1));
 				com.setCommunityName(rs.getString(2));
 				com.setCommunityIntro(rs.getString(3));
+				com.setCommunityId(rs.getInt(4));
 				list.add(com);
 			}
 		}catch (Exception e){

@@ -15,4 +15,6 @@ public interface ActivityDAO {
 	public void updateAct(Activity act) throws Exception;//修改更新活动
 	public List<Activity> getNewAct(int comId) throws Exception;//通过社团id获取正在举办的活动详细信息
 	public List<Activity> getOldAct(int comId) throws Exception;//通过社团id获取已经举办的活动详情信息
+
+	public void updateSignNum(int actId) throws Exception;//学生报名之后修改报名人数信息,公用一个connection链接
 }

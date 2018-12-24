@@ -74,7 +74,7 @@
                     <input name="actImage" type="file" id="input_upload_driver"  style="display: none" accept="image/jpg, image/png, image/jpeg"  onChange="preview(this,'img_driver');">
                 </div>
             </div>
-            <div class="information"><font>活动主题</font><input name="actTopic" type="text" placeholder="写入活动发起的单位或者个人信息" /><br /></div>
+            <div class="information"><font>活动主题</font><input name="actTopic" type="text" placeholder="写入活动的主题" /><br /></div>
             <div class="information"><font>活动详情</font><textarea name="actIntro" rows="10" cols="81" placeholder="写入活动的描述"></textarea></div>
 
 

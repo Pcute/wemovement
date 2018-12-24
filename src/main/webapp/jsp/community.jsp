@@ -69,7 +69,7 @@
         <div class="by-3" style="margin-top:20px;">
             <c:forEach var="comall" items="${commAllList}">
                 <div class="by-3a">
-                    <a href="communityintro.do?id=${comall.communityId}"><img style="margin-bottom:15px; border-radius:10px;" src="${comall.communityPicture}" width="200" height="100">
+                    <a href="communityinformationindex.do?id=${comall.communityId}"><img style="margin-bottom:15px; border-radius:10px;" src="${comall.communityPicture}" width="200" height="100">
                     <p><strong>${comall.communityName}</strong></p>
                     <p><font color="#999999" size="-1">${comall.communityIntro}</font></p></a>
                 </div>
@@ -85,7 +85,7 @@
         <div class="by-3" style="margin-top:20px;">
             <c:forEach var="com1" items="${comm1}">
                 <div class="by-3a">
-                    <a href="communityintro.do?id=${com1.communityId}"><img style="margin-bottom:15px; border-radius:10px;" src="${com1.communityPicture}" width="200" height="100">
+                    <a href="communityinformationindex.do?id=${com1.communityId}"><img style="margin-bottom:15px; border-radius:10px;" src="${com1.communityPicture}" width="200" height="100">
                     <p><strong>${com1.communityName}</strong></p>
                     <p><font color="#999999" size="-1">${com1.communityIntro}</font></p></a>
                 </div>
@@ -101,7 +101,7 @@
         <div class="by-3" style="margin-top:30px;">
             <c:forEach var="com2" items="${comm2}">
                 <div class="by-3a">
-                    <a href="communityintro.do?id=${com2.communityId}"><img style="margin-bottom:15px; border-radius:10px;" src="${com2.communityPicture}" width="200" height="100">
+                    <a href="communityinformationindex.do?id=${com2.communityId}"><img style="margin-bottom:15px; border-radius:10px;" src="${com2.communityPicture}" width="200" height="100">
                     <p><strong>${com2.communityName}</strong></p>
                     <p><font color="#999999" size="-1">${com2.communityIntro}</font></p></a>
                 </div>
@@ -117,7 +117,7 @@
         <div class="by-3" style="margin-top:30px;">
             <c:forEach var="com3" items="${comm3}">
                 <div class="by-3a">
-                    <a href="communityintro.do?id=${com3.communityId}"><img style="margin-bottom:15px; border-radius:10px;" src="${com3.communityPicture}" width="200" height="100">
+                    <a href="communityinformationindex.do?id=${com3.communityId}"><img style="margin-bottom:15px; border-radius:10px;" src="${com3.communityPicture}" width="200" height="100">
                     <p><strong>${com3.communityName}</strong></p>
                     <p><font color="#999999" size="-1">${com3.communityIntro}</font></p></a>
                 </div>
@@ -133,7 +133,7 @@
         <div class="by-3" style="margin-top:30px;">
             <c:forEach var="com4" items="${comm4}">
                 <div class="by-3a">
-                    <a href="communityintro.do?id=${com4.communityId}"><img style="margin-bottom:15px; border-radius:10px;" src="${com4.communityPicture}" width="200" height="100">
+                    <a href="communityinformationindex.do?id=${com4.communityId}"><img style="margin-bottom:15px; border-radius:10px;" src="${com4.communityPicture}" width="200" height="100">
                     <p><strong>${com4.communityName}</strong></p>
                     <p><font color="#999999" size="-1">${com4.communityIntro}</font></p></a>
                 </div>
@@ -146,7 +146,7 @@
         <div class="by-3" style="margin-top:30px;">
         <c:forEach var="com5" items="${comm5}">
             <div class="by-3a">
-                <a href="communityintro.do?id=${com5.communityId}"><img style="margin-bottom:15px; border-radius:10px;" src="${com5.communityPicture}" width="200" height="100">
+                <a href="communityinformationindex.do?id=${com5.communityId}"><img style="margin-bottom:15px; border-radius:10px;" src="${com5.communityPicture}" width="200" height="100">
                 <p><strong>${com5.communityName}</strong></p>
                 <p><font color="#999999" size="-1">${com5.communityIntro}</font></p></a>
             </div>
@@ -162,7 +162,7 @@
         <div class="by-3" style="margin-top:20px;">
             <c:forEach var="com6" items="${comm6}">
                 <div class="by-3a">
-                    <a href="communityintro.do?id=${com6.communityId}"><img style="margin-bottom:15px; border-radius:10px;" src="${com6.communityPicture}" width="200" height="100">
+                    <a href="communityinformationindex.do?id=${com6.communityId}"><img style="margin-bottom:15px; border-radius:10px;" src="${com6.communityPicture}" width="200" height="100">
                     <p><strong>${com6.communityName}</strong></p>
                     <p><font color="#999999" size="-1">${com6.communityIntro}</font></p></a>
                 </div>

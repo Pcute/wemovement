@@ -5,8 +5,8 @@ import java.util.Date;
 public class Record {
 	private int recordId;
 	private int stuId;
-	private int conActId;
-	private Date signTime;
+	private int actId;
+	private String signTime;
 	private String recordAudit;
 	private String recordResult;
 	private String recordStatus;
@@ -27,19 +27,19 @@ public class Record {
 		this.stuId = stuId;
 	}
 
-	public int getConActId() {
-		return conActId;
+	public int getActId() {
+		return actId;
 	}
 
-	public void setConActId(int conActId) {
-		this.conActId = conActId;
+	public void setActId(int actId) {
+		this.actId = actId;
 	}
 
-	public Date getSignTime() {
+	public String getSignTime() {
 		return signTime;
 	}
 
-	public void setSignTime(Date signTime) {
+	public void setSignTime(String signTime) {
 		this.signTime = signTime;
 	}
 

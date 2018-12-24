@@ -110,16 +110,14 @@ public class ActivityDAOimplTest {
 		//assertEquals(44,list.size());
 	}
 
-	/*@Test
-	public void getNewAct(){
+	@Test
+	public void updateSignNum(){
 		ActivityDAO dao=new ActivityDAOimpl();
-		List<Activity> list=new ArrayList<>();
 		try {
-			list=dao.getNewAct(1);
-			System.out.println(list.get(0).getActivityName());
+			dao.updateSignNum(1);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}*/
+	}
 
 }

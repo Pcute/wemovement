@@ -108,7 +108,7 @@
     <hr>
     <div class="row">
         <div class="col-sm-12 col-lg-12">
-            <h3>正在举办的活动</h3><h4 class="text-right"><a href="#">发布新的活动</a></h4>
+            <h3>正在举办的活动</h3><h4 class="text-right"><a href="releaseactivity0.do">发布新的活动</a></h4>
             <hr>
             <c:forEach var="ongoing" items="${newActivity}">
             <div class="row">
@@ -138,7 +138,8 @@
             </div>
             <h4><span class="label label-default">活动详情</span><span class="label label-default" style="margin-left: 10px;"><a href="#">参加活动</a></span></h4>
             <p>故事发生在非洲附近的大海上，主人公冷锋遭遇人生滑铁卢，被“开除军籍”，本想漂泊一生的他，正当他打算这么做的时候，一场突如其来的意外打破了他的计划，突然被卷入了一场非洲国家叛乱，本可以安全撤离，却因无法忘记曾经为军人的使命，孤身犯险冲回沦陷区</p>
-        </div>--%>
+        --%>
+        </div>
     </div>
     <hr>
     <h3>已举办的活动</h3>
@@ -182,7 +183,7 @@
             </div>
             <h4><span class="label label-default">活动详情</span></h4>
             <p>神经生理过程所产生的映象及所概括的事物的因果联系和意义看，属心理活动。笼统地讲，人的内心所进行的一切活动都属于心理活动，人们对周围世界的观察、注意感兴趣的事物、体会生活中的喜怒哀乐、克服困难完成一项工作或任务等等，这些都是人的心理活动</p>
-        </div>--%>
+        --%></div>
     </div>
     <hr>
     <h3>活动图片展示</h3>
@@ -207,9 +208,9 @@
             <div class="row">
                 <c:forEach var="past" items="${oldActivity}">
                 <div class="col-lg-4 col-sm-6 col-xs-6"><img src="${past.activityPicture}" alt=""><hr class="hidden-lg"></div>
-                <div class="col-lg-4 col-sm-6 col-xs-6"><img src="images/300X200.gif" alt=""><hr class="hidden-lg"></div>
+                <%--<div class="col-lg-4 col-sm-6 col-xs-6"><img src="images/300X200.gif" alt=""><hr class="hidden-lg"></div>
                 <div class="col-lg-4 col-sm-6 col-xs-6"><img src="images/300X200.gif" alt=""></div>
-                <div class="col-lg-4 col-sm-6 col-xs-6 hidden-lg"><img src="images/300X200.gif" alt=""></div>
+                <div class="col-lg-4 col-sm-6 col-xs-6 hidden-lg"><img src="images/300X200.gif" alt=""></div>--%>
                 </c:forEach>
             </div>
 

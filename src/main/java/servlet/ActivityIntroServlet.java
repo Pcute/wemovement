@@ -17,12 +17,14 @@ public class ActivityIntroServlet extends HttpServlet {
 		ActivityDAO dao=new ActivityDAOimpl();
 		String strid=  request.getParameter("id");
 		//System.out.println("id="+strid);
-		int id=0;
+		/* int id=0;
 		try {
 			id=Integer.parseInt(strid);
 		} catch (NumberFormatException e) {
 			e.printStackTrace();
-		}
+		}*/
+		int id=Integer.parseInt(strid);
+		System.out.println(id);
 		try {
 			Activity act=dao.getActIntro(id);
 			request.setAttribute("actintro",act);

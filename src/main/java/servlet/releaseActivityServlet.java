@@ -25,7 +25,8 @@ public class releaseActivityServlet extends HttpServlet {
 		//设置网页属性
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		response.setHeader("Content-type", "text/html;charset=UTF-8");
+		//response.setHeader("Content-type", "text/html;charset=UTF-8");
+		response.setContentType("text/html;charset=UTF-8");
 
 
 
@@ -47,9 +48,11 @@ public class releaseActivityServlet extends HttpServlet {
 		//int iniID=1;//int iniID=community.getCommunityId();
 		//String iniType="社团";
 		//String iniName="吉他社";//community.getCommunityName();
+
 		int iniID=0;
 		String iniType="";
 		String iniName="";
+
 		String actTopic=updateUtil.processFormField("actTopic");
 		String actIntro=updateUtil.processFormField("actIntro");
 		//String actImage=request.getParameter("actImage");
@@ -71,8 +74,8 @@ public class releaseActivityServlet extends HttpServlet {
 		String actAudit="未审核";
 
 		if ("community".equals(loginRole)) {
-			Community community=null;
-			community=(Community) session.getAttribute("loginer");
+			//Community community=new Community();
+			Community community=(Community) session.getAttribute("longer");
 			iniID=community.getCommunityId();
 			iniType="社团";
 			iniName=community.getCommunityName();
@@ -100,15 +103,15 @@ public class releaseActivityServlet extends HttpServlet {
 
 
 		if("college".equals(loginRole)){
-			College college=null;
-			college=(College) session.getAttribute("loginer");
+			//College college=null;
+			College college=(College) session.getAttribute("longer");
 			iniID=college.getCollegeId();
 			iniType="学院";
 			iniName=college.getCollegeName();
 		}
 		if("committee".equals(loginRole)){
-			Committee committee=null;
-			committee=(Committee)session.getAttribute("loginer");
+			//Committee committee=null;
+			Committee committee=(Committee)session.getAttribute("longer");
 			iniID=committee.getCommitteeId();
 			iniType="团委";
 			iniName=committee.getCommitteeName();
