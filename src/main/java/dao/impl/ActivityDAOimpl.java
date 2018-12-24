@@ -15,7 +15,7 @@ public class ActivityDAOimpl implements ActivityDAO {
 		Connection conn=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
-		List<Activity> list=null;
+		List<Activity> list=new ArrayList<>();
 	//	;
 		try{
 			conn= JDBCUtil.getconn();
@@ -44,7 +44,7 @@ public class ActivityDAOimpl implements ActivityDAO {
 		Connection conn=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
-		List<Activity> list=null;
+		List<Activity> list=new ArrayList<>();
 	//	list=null;
 		try{
 			conn= JDBCUtil.getconn();
@@ -74,7 +74,6 @@ public class ActivityDAOimpl implements ActivityDAO {
 		PreparedStatement ps=null;
 		ResultSet rs=null;
 		List<Activity> list=new ArrayList<Activity>();
-
 		try{
 			conn=JDBCUtil.getconn();
 			String sql="select activity_name,ini_id,ini_type,ini_name,activity_topic,activity_intro,activity_picture,people_num,address,sign_time,activity_time,activity_state,activity_audit,activity_id " +
@@ -113,17 +112,21 @@ public class ActivityDAOimpl implements ActivityDAO {
 		Connection conn=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
-		List<Activity>list=null;
+		List<Activity>list=new ArrayList<>();
 		try {
 			conn=JDBCUtil.getconn();
-			String sql="select activity_name,ini_id,ini_type,ini_name,activity_topic,activity_intro,activity_picture,people_num,address,sign_time,activity_time,activity_state,activity_audit,activity_id" +
-					"from activity";
+			/*String sql="select activity_name,ini_id,ini_type,ini_name,activity_topic,activity_intro,activity_picture,people_num,address,sign_time,activity_time,activity_state,activity_audit,activity_id" +
+					"from activity";*/
+			String sql="select activity_name,activity_picture,activity_time,activity_intro from activity";
 			ps=conn.prepareStatement(sql);
 			rs=ps.executeQuery();
 			while (rs.next()){
 				Activity act =new Activity();
 				act.setActivityName(rs.getString(1));
-				act.setIniId(rs.getInt(2));
+				act.setActivityPicture(rs.getString(2));
+				act.setActivityTime(rs.getString(3));
+				act.setActivityIntro(rs.getString(4));
+				/*act.setIniId(rs.getInt(2));
 				act.setIniType(rs.getString(3));
 				act.setIniName(rs.getString(4));
 				act.setActivityTopic(rs.getString(5));
@@ -135,7 +138,7 @@ public class ActivityDAOimpl implements ActivityDAO {
 				act.setActivityTime(rs.getString(11));
 				act.setActivityState(rs.getString(12));
 				act.setActivityAudit(rs.getString(13));
-				act.setActivityId(rs.getInt(14));
+				act.setActivityId(rs.getInt(14));*/
 				list.add(act);
 			}
 			return list;
@@ -263,7 +266,7 @@ public class ActivityDAOimpl implements ActivityDAO {
 		Connection conn=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
-		List<Activity>list= null;
+		List<Activity>list= new ArrayList<>();
 		try {
 			conn=JDBCUtil.getconn();
 			String sql="select activity_id,cla_id,activity_name,activity_topic,activity_intro,activity_picture,people_num,peo_num,address\n" +
@@ -273,7 +276,6 @@ public class ActivityDAOimpl implements ActivityDAO {
 			ps=conn.prepareStatement(sql);
 			ps.setObject(1,comId);
 			rs=ps.executeQuery();
-			list=new ArrayList<>();
 			while (rs.next()){
 				Activity act=new Activity();
 				act.setActivityId(rs.getInt(1));
@@ -298,7 +300,7 @@ public class ActivityDAOimpl implements ActivityDAO {
 		Connection conn=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
-		List<Activity>list= null;
+		List<Activity> list= new ArrayList<>();
 		try {
 			conn=JDBCUtil.getconn();
 			String sql="select activity_id,cla_id,activity_name,activity_topic,activity_intro,activity_picture,people_num,peo_num,address\n" +
@@ -308,7 +310,6 @@ public class ActivityDAOimpl implements ActivityDAO {
 			ps=conn.prepareStatement(sql);
 			ps.setObject(1,comId);
 			rs=ps.executeQuery();
-			list=new ArrayList<>();
 			while (rs.next()){
 				Activity act=new Activity();
 				act.setActivityId(rs.getInt(1));

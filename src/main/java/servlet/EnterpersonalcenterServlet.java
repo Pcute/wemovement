@@ -12,10 +12,12 @@ public class EnterpersonalcenterServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String longin=request.getParameter("type");
 		if("student".equals(longin)){
-			request.getRequestDispatcher("/jsp/personalinfo.jsp").forward(request,response);
+			request.getRequestDispatcher("/jsp/personalCenter.jsp").forward(request,response);
+			//直接从session中取数据，不用写servlet
 		}
 		else if("community".equals(longin)){
-			request.getRequestDispatcher("/jsp/communityCenter.jsp").forward(request,response);
+			request.getRequestDispatcher("communityintro.do").forward(request,response);
+			//社团详细界面动态化，所以需要写servlet
 		}
 		else if("college".equals(longin)){
 			request.getRequestDispatcher("/jsp/collegeInformation.jsp").forward(request,response);

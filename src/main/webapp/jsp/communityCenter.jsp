@@ -190,10 +190,10 @@
     <div class="container">
             <div class="row">
                 <c:forEach var="ongoing" items="${newActivity}">
-                <div class="col-lg-4 col-sm-6 col-xs-6"><img src="images/300X200.gif" alt=""><hr class="hidden-lg"></div>
-                <div class="col-lg-4 col-sm-6 col-xs-6"><img src="images/300X200.gif" alt=""><hr class="hidden-lg"></div>
+                <div class="col-lg-4 col-sm-6 col-xs-6"><img src="${ongoing.activityPicture}" alt=""><hr class="hidden-lg"></div>
+                <%--<div class="col-lg-4 col-sm-6 col-xs-6"><img src="images/300X200.gif" alt=""><hr class="hidden-lg"></div>
                 <div class="col-lg-4 col-sm-6 col-xs-6"><img src="images/300X200.gif" alt=""></div>
-                <div class="col-lg-4 col-sm-6 col-xs-6 hidden-lg"><img src="images/300X200.gif" alt=""></div>
+                <div class="col-lg-4 col-sm-6 col-xs-6 hidden-lg"><img src="images/300X200.gif" alt=""></div>--%>
                 </c:forEach>
             </div>
 
@@ -206,7 +206,7 @@
         <hr>
             <div class="row">
                 <c:forEach var="past" items="${oldActivity}">
-                <div class="col-lg-4 col-sm-6 col-xs-6"><img src="images/300X200.gif" alt=""><hr class="hidden-lg"></div>
+                <div class="col-lg-4 col-sm-6 col-xs-6"><img src="${past.activityPicture}" alt=""><hr class="hidden-lg"></div>
                 <div class="col-lg-4 col-sm-6 col-xs-6"><img src="images/300X200.gif" alt=""><hr class="hidden-lg"></div>
                 <div class="col-lg-4 col-sm-6 col-xs-6"><img src="images/300X200.gif" alt=""></div>
                 <div class="col-lg-4 col-sm-6 col-xs-6 hidden-lg"><img src="images/300X200.gif" alt=""></div>

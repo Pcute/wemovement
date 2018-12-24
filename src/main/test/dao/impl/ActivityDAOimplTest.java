@@ -94,7 +94,7 @@ public class ActivityDAOimplTest {
 		List<Activity> list= new ArrayList<>();
 		try {
 			list=dao.getNewAct(1);
-			System.out.println(list.get(0).getActivityName());
+			System.out.println(list.get(3).getActivityName());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -106,7 +106,20 @@ public class ActivityDAOimplTest {
 		ActivityDAO dao=new ActivityDAOimpl();
 		List<Activity> list=new ArrayList<>();
 		list=dao.getAll();
-		System.out.println(list.get(0).getActivityName());
+		System.out.println(list.get(2).getActivityName());
 		//assertEquals(44,list.size());
 	}
+
+	/*@Test
+	public void getNewAct(){
+		ActivityDAO dao=new ActivityDAOimpl();
+		List<Activity> list=new ArrayList<>();
+		try {
+			list=dao.getNewAct(1);
+			System.out.println(list.get(0).getActivityName());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}*/
+
 }
