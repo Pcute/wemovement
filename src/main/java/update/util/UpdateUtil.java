@@ -3,6 +3,7 @@ package update.util;
 import java.io.File;
 import java.util.Iterator;
 import java.util.List;
+import java.util.UUID;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServlet;
@@ -81,8 +82,8 @@ public class UpdateUtil {
 				String fieldName = item.getFieldName();
 				if (fieldName.equalsIgnoreCase(fieldname)) {
 					fileName = item.getName();
-					fileName = System.currentTimeMillis()
-							+ fileName.substring(fileName.lastIndexOf("."), fileName.length());// rename
+					fileName = UUID.randomUUID().toString()//系统随机生成一个随机数，用来存储图片名称，而System.currentTimeMillis()这是获取系统时间
+							+ fileName.substring(fileName.lastIndexOf("."), fileName.length());// rename，
 					// filename
 					uploadedfile = new File(basepath + path + "/" + fileName);
 

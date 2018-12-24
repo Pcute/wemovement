@@ -17,6 +17,7 @@ import java.util.List;
 public class ActivityindexServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ActivityDAO dao=new ActivityDAOimpl();
+		List<Activity> activityAll=null;
 		List<Activity> actlist1=null;
 		List<Activity> actlist2=null;
 		List<Activity> actlist3=null;
@@ -24,6 +25,7 @@ public class ActivityindexServlet extends HttpServlet {
 		List<Activity> actlist5=null;
 		List<Activity> actlist6=null;
 		List<Activity> actlist7=null;
+		activityAll=dao.getAll();
 		actlist1=dao.getClass(1);
 		actlist2=dao.getClass(2);
 		actlist3=dao.getClass(3);
@@ -31,6 +33,7 @@ public class ActivityindexServlet extends HttpServlet {
 		actlist5=dao.getClass(5);
 		actlist6=dao.getClass(6);
 		actlist7=dao.getClass(7);
+		request.setAttribute("actlistAll",activityAll);
 		request.setAttribute("actlist1",actlist1);
 		request.setAttribute("actlist2",actlist2);
 		request.setAttribute("actlist3",actlist3);

@@ -6,7 +6,6 @@ public class Record {
 	private int recordId;
 	private int stuId;
 	private int conActId;
-	private String recordType;
 	private Date signTime;
 	private String recordAudit;
 	private String recordResult;
@@ -34,14 +33,6 @@ public class Record {
 
 	public void setConActId(int conActId) {
 		this.conActId = conActId;
-	}
-
-	public String getRecordType() {
-		return recordType;
-	}
-
-	public void setRecordType(String recordType) {
-		this.recordType = recordType;
 	}
 
 	public Date getSignTime() {

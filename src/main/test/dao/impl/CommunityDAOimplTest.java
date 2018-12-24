@@ -26,4 +26,26 @@ public class CommunityDAOimplTest {
 
 		System.out.println(list.get(0).getCommunityPicture());
 	}
+
+  @Test
+	public void loginSelect(){
+		CommunityDAO dao=new CommunityDAOimpl();
+		Community com=new Community();
+		com=dao.loginSelect("A01","1234");
+		System.out.println(com.getCommunityId());
+  }
+
+
+  @Test
+	public void getCommIntro(){
+		CommunityDAO dao=new CommunityDAOimpl();
+		Community community=new Community();
+	  try {
+		  community=dao.getCommIntro(1);
+		  System.out.println(community.getCommunityName());
+		  System.out.println(community.getCommunityAddress());
+	  } catch (Exception e) {
+		  e.printStackTrace();
+	  }
+  }
 }

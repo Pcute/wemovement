@@ -9,7 +9,8 @@
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
 <html>
 <head>
     <base href="<%=basePath%>">
@@ -25,8 +26,8 @@
     <div class="left">
         <img style="position: absolute;-webkit-filter:none;opacity:0.4;width:100%;height:100%;" src="icon.PNG"/>
         <div class="icon">
-            <a href="#" title="点击更换头像"><img  class="iconImage" src="icon.PNG" width=80px height=80px/></a>
-            <p class="name">我的昵称&nbsp; <a href="#" title="点击修改"><img class="modifyImage" src="modify.png" width="15px" height="15px"/></a></p>
+            <a href="#" title="点击更换头像"><img  class="iconImage" src="${longer.picture}" width=80px height=80px/></a>
+            <p class="name">我的昵称&nbsp; <a href="#" title="点击修改"><img class="modifyImage" src="${longer.picture}" width="15px" height="15px"/></a></p>
         </div>
 
     </div>
@@ -38,23 +39,25 @@
             <li>我的收藏</li>
             <li>我的关注</li>
             <li>查看通知</li>
+            <li>参加过得活动</li>
+            <li>我的素拓表</li>
         </ul>
         <div class="content">
             <div class="list ">
                 <div class="info">
                     <table cellspacing="20">
                         <tr>
-                            <th>昵&nbsp;&nbsp;称：</th> <td> </td> <td> </td><td >我的昵称</td>
+                            <th>昵&nbsp;&nbsp;称：</th> <td> </td> <td> </td><td >${longer.stuNickName}</td>
                         </tr>
 
                         <tr>
                             <th >学&nbsp;&nbsp;校：</th><td> </td><td> </td><td>江西师范大学</td>
                         </tr>
                         <tr>
-                            <th >学&nbsp;&nbsp;号：</th><td></td><td></td><td>201626701047</td>
+                            <th >学&nbsp;&nbsp;号：</th><td></td><td></td><td>${longer.stuNo}</td>
                         </tr>
                         <tr>
-                            <th >姓&nbsp;&nbsp;名：</th><td></td><td></td><td>王朝晖</td>
+                            <th >姓&nbsp;&nbsp;名：</th><td></td><td></td><td>${loginName}</td>
                         </tr>
                         <tr>
                             <th >性&nbsp;&nbsp;别：</th><td></td><td></td><td>男</td>

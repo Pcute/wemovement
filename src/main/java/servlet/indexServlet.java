@@ -16,11 +16,14 @@ import java.util.List;
 public class indexServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ActivityDAO dao=new ActivityDAOimpl();
+		//request.setCharacterEncoding("UTF-8");
+		//response.setContentType("text/html");
 		List<Activity> actnewList=null;
 		List<Activity> actrecommList=null;
 		actnewList=dao.getNew(5);
 		actrecommList=dao.getRecommdation(5);
 		request.setAttribute("actnewList",actnewList);
+		//System.out.println(actnewList.get(4).getActivityName());
 		request.setAttribute("actrecommList",actrecommList);
 		request.getRequestDispatcher("/jsp/homepage.jsp").forward(request,response);
 	}

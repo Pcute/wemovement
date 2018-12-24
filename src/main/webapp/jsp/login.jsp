@@ -9,7 +9,8 @@
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<%@ page contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
 <html>
 <head>
     <base href="<%=basePath%>">
@@ -23,6 +24,7 @@
 <div id="body">
     <%--head头部--%>
     <%@include file="head.jsp"%>
+
         <div class="wrap" id="wrap">
             <div class="logGet">
 
@@ -32,8 +34,8 @@
                 <form action="login.do" method="post" name="login">
                     <div class="lgD">
 
-                        <input type="text" name="uName"
-                               placeholder="输入用户名" />
+                        <input type="text" name="uNo"
+                               placeholder="输入账号" />
                     </div>
                     <div class="lgD">
 
@@ -51,6 +53,24 @@
                     <div class="logE"><a href="regist.jsp">忘记密码</a></div>
                 </form>
             </div>
+        </div>
+
+
+
+
+
+        <div id="foot" style="margin-top:35px;">
+            <nav class="navbar navbar-default navbar-fixed-bottm" role="navigation">
+                <div class="container-fluid">
+                    <ul class="nav navbar-nav nav-tabs-justified">
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">学校链接</a></li>
+                        <li><a href="#">企业合作</a></li>
+                        <li><a href="#">帮助中心</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
         <%--foot尾部--%>
     <%@include file="foot.jsp"%>

@@ -2,6 +2,7 @@ package domain;
 
 public class College {
 	private int collegeId;
+	private String collegeNo;
 	private String collegePwd;
 	private String collegeName;
 	private String collegeIntro;
@@ -15,6 +16,14 @@ public class College {
 
 	public void setCollegeId(int collegeId) {
 		this.collegeId = collegeId;
+	}
+
+	public String getCollegeNo() {
+		return collegeNo;
+	}
+
+	public void setCollegeNo(String collegeNo) {
+		this.collegeNo = collegeNo;
 	}
 
 	public String getCollegePwd() {

@@ -42,12 +42,30 @@
             <span><font size="-1" color="#FFFFFF">审核状态${actintro.activityAudit}:审核通过</font></span><br />
         </div>
         <div class="top-2">
-            <button class="button" name="" type="submit">
+            <a href="enroll.do"><button class="button" id="b1" name="" type="submit" onClick="myFunction()">
                 我要报名
             </button>
+
+
+            </a><!--禁用属性class="disabled",$('button').addClass('disabled'); // 按钮灰掉，但仍可点击。
+$('button').prop('disabled', true); // 按钮灰掉，且不可点击。-->
             <button class="button" name="" type="submit">
                 收藏活动
             </button>
+            <script>
+                function myFunction(){
+                    var x;
+                    var r=confirm("您确认要报名");
+                    if (r==true){
+                        x="您以成功报名";
+                        document.getElementById("b1").disabled=true;
+                    }
+                    else{
+                        x="您还没有报名";
+                    }
+                    document.getElementById("demo").innerHTML=x;
+                }
+            </script>
         </div><!--top-2-->
     </div><!--top-->
 

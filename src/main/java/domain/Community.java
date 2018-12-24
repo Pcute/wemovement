@@ -8,10 +8,8 @@ public class Community {
 	private String communityName;
 	private String communityIntro;
 	private String communityPicture;
-
-
-
 	private String tele;
+	private String communityAddress;
 	private String email;
 
 
@@ -78,6 +76,14 @@ public class Community {
 
 	public void setTele(String tele) {
 		this.tele = tele;
+	}
+
+	public String getCommunityAddress() {
+		return communityAddress;
+	}
+
+	public void setCommunityAddress(String communityAddress) {
+		this.communityAddress = communityAddress;
 	}
 
 	public String getEmail() {

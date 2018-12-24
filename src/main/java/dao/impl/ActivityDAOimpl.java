@@ -4,11 +4,10 @@ import dao.ActivityDAO;
 import domain.Activity;
 import jdbc.util.JDBCUtil;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Date;
 
 public class ActivityDAOimpl implements ActivityDAO {
 	@Override
@@ -16,7 +15,7 @@ public class ActivityDAOimpl implements ActivityDAO {
 		Connection conn=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
-		List<Activity> list=new ArrayList();
+		List<Activity> list=null;
 	//	;
 		try{
 			conn= JDBCUtil.getconn();
@@ -45,7 +44,7 @@ public class ActivityDAOimpl implements ActivityDAO {
 		Connection conn=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
-		List<Activity> list=new ArrayList();
+		List<Activity> list=null;
 	//	list=null;
 		try{
 			conn= JDBCUtil.getconn();
@@ -94,8 +93,8 @@ public class ActivityDAOimpl implements ActivityDAO {
 				act.setActivityPicture(rs.getString(7));
 				act.setPeopleNum(rs.getInt(8));
 				act.setAddress(rs.getString(9));
-				act.setSignTime(rs.getTime(10));
-				act.setActivityTime(rs.getTime(11));
+				act.setSignTime(rs.getString(10));
+				act.setActivityTime(rs.getString(11));
 				act.setActivityState(rs.getString(12));
 				act.setActivityAudit(rs.getString(13));
 				act.setActivityId(rs.getInt(14));
@@ -110,6 +109,47 @@ public class ActivityDAOimpl implements ActivityDAO {
 	}
 
 	@Override
+	public List<Activity> getAll()  {
+		Connection conn=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		List<Activity>list=null;
+		try {
+			conn=JDBCUtil.getconn();
+			String sql="select activity_name,ini_id,ini_type,ini_name,activity_topic,activity_intro,activity_picture,people_num,address,sign_time,activity_time,activity_state,activity_audit,activity_id" +
+					"from activity";
+			ps=conn.prepareStatement(sql);
+			rs=ps.executeQuery();
+			while (rs.next()){
+				Activity act =new Activity();
+				act.setActivityName(rs.getString(1));
+				act.setIniId(rs.getInt(2));
+				act.setIniType(rs.getString(3));
+				act.setIniName(rs.getString(4));
+				act.setActivityTopic(rs.getString(5));
+				act.setActivityIntro(rs.getString(6));
+				act.setActivityPicture(rs.getString(7));
+				act.setPeopleNum(rs.getInt(8));
+				act.setAddress(rs.getString(9));
+				act.setSignTime(rs.getString(10));
+				act.setActivityTime(rs.getString(11));
+				act.setActivityState(rs.getString(12));
+				act.setActivityAudit(rs.getString(13));
+				act.setActivityId(rs.getInt(14));
+				list.add(act);
+			}
+			return list;
+		}catch (Exception e){
+		/*	list=null;
+			return null;*/
+		return null;
+		}
+		finally {
+			JDBCUtil.close(conn,ps,rs);
+		}
+	}
+
+	@Override
 	public Activity getActIntro(int id) {
 		Activity act=new Activity();
 		Connection conn=null;
@@ -117,7 +157,7 @@ public class ActivityDAOimpl implements ActivityDAO {
 		ResultSet rs=null;
 		try {
 			conn=JDBCUtil.getconn();
-			String sql="select activity_name,ini_id,ini_type,ini_name,activity_topic,activity_intro,activity_picture,people_num,address,sign_time,activity_time,activity_state,activity_audit\n" +
+			String sql="select activity_name,ini_id,ini_type,ini_name,activity_topic,activity_intro,activity_picture,people_num,peo_num,address,sign_time,activity_time,activity_state,activity_audit\n" +
 					"from activity where activity_id=?";
 			ps=conn.prepareStatement(sql);
 			ps.setObject(1,id);
@@ -131,14 +171,16 @@ public class ActivityDAOimpl implements ActivityDAO {
 				act.setActivityIntro(rs.getString(6));
 				act.setActivityPicture(rs.getString(7));
 				act.setPeopleNum(rs.getInt(8));
-				act.setAddress(rs.getString(9));
-				act.setSignTime(rs.getTime(10));
-				act.setActivityTime(rs.getTime(11));
-				act.setActivityState(rs.getString(12));
-				act.setActivityAudit(rs.getString(13));
+				act.setPeoNum(rs.getInt(9));
+				act.setAddress(rs.getString(10));
+				act.setSignTime(rs.getString(11));
+				act.setActivityTime(rs.getString(12));
+				act.setActivityState(rs.getString(13));
+				act.setActivityAudit(rs.getString(14));
 			}
 		}catch (Exception e){
 			e.printStackTrace();
+			act=null;
 		}
 		finally {
 			JDBCUtil.close(conn,ps,rs);
@@ -169,6 +211,9 @@ public class ActivityDAOimpl implements ActivityDAO {
 			ps.setObject(9,act.getPeopleNum());
 			ps.setObject(10,act.getPeoNum());
 			ps.setObject(11,act.getAddress());
+			//	ps.setObject(12,"2018-12-01");//act.getSignTime());
+			//ps.setObject(12,new Timestamp((new Date()).getTime()));
+			// act.getActivityTime());
 			ps.setObject(12,act.getSignTime());
 			ps.setObject(13,act.getActivityTime());
 			ps.setObject(14,act.getActivityState());
@@ -208,6 +253,76 @@ public class ActivityDAOimpl implements ActivityDAO {
 			ps.setObject(15,act.getActivityAudit());
 			ps.executeUpdate();
 			//list.add(act);
+		}finally {
+			JDBCUtil.close(conn,ps,rs);
+		}
+	}
+
+	@Override
+	public List<Activity> getNewAct(int comId) throws Exception {
+		Connection conn=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		List<Activity>list= null;
+		try {
+			conn=JDBCUtil.getconn();
+			String sql="select activity_id,cla_id,activity_name,activity_topic,activity_intro,activity_picture,people_num,peo_num,address\n" +
+					"from activity \n" +
+					"where activity.ini_type='社团' \n" +
+					"and activity.ini_id=? and activity_state='正在举办'";
+			ps=conn.prepareStatement(sql);
+			ps.setObject(1,comId);
+			rs=ps.executeQuery();
+			list=new ArrayList<>();
+			while (rs.next()){
+				Activity act=new Activity();
+				act.setActivityId(rs.getInt(1));
+				act.setClaId(rs.getInt(2));
+				act.setActivityName(rs.getString(3));
+				act.setActivityTopic(rs.getString(4));
+				act.setActivityIntro(rs.getString(5));
+				act.setActivityPicture(rs.getString(6));
+				act.setPeopleNum(rs.getInt(7));
+				act.setPeoNum(rs.getInt(8));
+				act.setAddress(rs.getString(9));
+				list.add(act);
+			}
+			return list;
+		}finally {
+			JDBCUtil.close(conn,ps,rs);
+		}
+	}
+
+	@Override
+	public List<Activity> getOldAct(int comId) throws Exception {
+		Connection conn=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		List<Activity>list= null;
+		try {
+			conn=JDBCUtil.getconn();
+			String sql="select activity_id,cla_id,activity_name,activity_topic,activity_intro,activity_picture,people_num,peo_num,address\n" +
+					"from activity \n" +
+					"where activity.ini_type='社团' \n" +
+					"and activity.ini_id=? and activity_state='已举办'";
+			ps=conn.prepareStatement(sql);
+			ps.setObject(1,comId);
+			rs=ps.executeQuery();
+			list=new ArrayList<>();
+			while (rs.next()){
+				Activity act=new Activity();
+				act.setActivityId(rs.getInt(1));
+				act.setClaId(rs.getInt(2));
+				act.setActivityName(rs.getString(3));
+				act.setActivityTopic(rs.getString(4));
+				act.setActivityIntro(rs.getString(5));
+				act.setActivityPicture(rs.getString(6));
+				act.setPeopleNum(rs.getInt(7));
+				act.setPeoNum(rs.getInt(8));
+				act.setAddress(rs.getString(9));
+				list.add(act);
+			}
+			return list;
 		}finally {
 			JDBCUtil.close(conn,ps,rs);
 		}

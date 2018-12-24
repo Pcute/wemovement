@@ -30,8 +30,8 @@ a:hover{
 
 #wrap {
     height: 719px;
-    width: 100;
-    background-image: url(bgImage.png);
+    width: 100%;
+    background-image: url(../images/bgImage.png);
     background-repeat: no-repeat;
     background-position: center center;
     background-size:100%;

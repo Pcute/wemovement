@@ -32,7 +32,7 @@ public class RecordDAOimpl implements RecordDAO {
 		Connection conn=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
-		Record record=new Record();
+		Record record=null;
 		try {
 			conn=JDBCUtil.getconn();
 			String sql="intsert into ";

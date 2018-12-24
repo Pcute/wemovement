@@ -15,16 +15,16 @@ public class Activity {
 	private  int peopleNum;
 	private int peoNum;
 	private  String address;
-	private Date signTime;
-	private Date activityTime;
+	private String signTime;
+	private String activityTime;
 	private String activityState;
 	private String activityAudit;
 
-	public Date getActivityTime() {
+	public String getActivityTime() {
 		return activityTime;
 	}
 
-	public void setActivityTime(Date activityTime) {
+	public void setActivityTime(String activityTime) {
 		this.activityTime = activityTime;
 	}
 
@@ -124,11 +124,11 @@ public class Activity {
 		this.address = address;
 	}
 
-	public Date getSignTime() {
+	public String getSignTime() {
 		return signTime;
 	}
 
-	public void setSignTime(Date signTime) {
+	public void setSignTime(String signTime) {
 		this.signTime = signTime;
 	}
 

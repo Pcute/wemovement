@@ -16,7 +16,7 @@ public class ActivityIntroServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ActivityDAO dao=new ActivityDAOimpl();
 		String strid=  request.getParameter("id");
-		System.out.println("id="+strid);
+		//System.out.println("id="+strid);
 		int id=0;
 		try {
 			id=Integer.parseInt(strid);

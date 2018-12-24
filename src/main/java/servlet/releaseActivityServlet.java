@@ -1,9 +1,12 @@
 package servlet;
 
 import dao.ActivityDAO;
+import dao.ClassificationDAO;
 import dao.impl.ActivityDAOimpl;
+import dao.impl.ClassificationDAOimpl;
 import domain.Activity;
 import domain.College;
+import domain.Committee;
 import domain.Community;
 import update.util.UpdateUtil;
 
@@ -19,59 +22,106 @@ import java.util.Date;
 @WebServlet(name = "releaseActivityServlet",urlPatterns = "/releaseactivity.do")
 public class releaseActivityServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		//设置网页属性
+		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
+		response.setHeader("Content-type", "text/html;charset=UTF-8");
+
+
+
 		ActivityDAO dao=new ActivityDAOimpl();
 		Activity act=new Activity();
-		//等王朝晖的登陆session
 		HttpSession session=request.getSession();
-		Community community=(Community) session.getAttribute("loginer");
-		College college=(College) session.getAttribute("loginer");
-		Community community1=(Community) session.getAttribute("loginer");
+		String loginRole= (String) session.getAttribute("loginRole");
+		//做测试
+		//String loginRole="community";
+
+		UpdateUtil updateUtil=new UpdateUtil(this,request);//调用上传文件方法
 
 
 
 
-		//等温奇伟界面
-		int actClass=Integer.parseInt(request.getParameter(""));
-
-
-
-
-		String actName=request.getParameter("actName");
-		//ini_id
-		int iniid=community.getCommunityId();
-		//ini_type
-		String iniType="社团";
-		//ini_name
-		String iniName=community.getCommunityName();
-
-
-
-		String actTopic=request.getParameter("actTopic");
-		String actIntro=request.getParameter("actIntro");
+		String actClass=updateUtil.processFormField("actClass");
+		int actClass1=Integer.parseInt(actClass);//转换成int型
+		String actName=updateUtil.processFormField("actName");
+		//int iniID=1;//int iniID=community.getCommunityId();
+		//String iniType="社团";
+		//String iniName="吉他社";//community.getCommunityName();
+		int iniID=0;
+		String iniType="";
+		String iniName="";
+		String actTopic=updateUtil.processFormField("actTopic");
+		String actIntro=updateUtil.processFormField("actIntro");
 		//String actImage=request.getParameter("actImage");
-
-
-
-
-		int peopleNum=Integer.parseInt(request.getParameter("peopleNum"));
-		int peoNum=0;
-		String actAdress=request.getParameter("actAdress");
-		Date actSignTime= new Date(request.getParameter("actSignTime"));
-		Date actActTime= new Date(request.getParameter("actActTime"));
-		//activity_state
+		//取图片,设置新的文件名，并保存的数据库
+		String newFileName="" ;
+			try {
+				newFileName=updateUtil.processUploadedFile("actImage","frontimages");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			//图片取完了
+		int peopleNum= Integer.parseInt(updateUtil.processFormField("peopleNum"));int peoNum=0;
+		String actAdress=updateUtil.processFormField("actAdress");
+		//Date actSignTime=new Date(updateUtil.processFormField("actSignTime"));
+		//Date actActTime=new Date(updateUtil.processFormField("actActTime"));
+		String actSignTime=updateUtil.processFormField("actSignTime");
+		String actActTime=updateUtil.processFormField("actActTime");
 		String actState="进行中";
-		//activity_audit
 		String actAudit="未审核";
 
+		if ("community".equals(loginRole)) {
+			Community community=null;
+			community=(Community) session.getAttribute("loginer");
+			iniID=community.getCommunityId();
+			iniType="社团";
+			iniName=community.getCommunityName();
 
-		act.setClaId(actClass);
+
+			//测试
+			//act.setClaId(1);
+			/*act.setClaId(actClass1);
+			act.setActivityName(actName);
+			act.setIniId(iniID);
+			act.setIniType(iniType);
+			act.setIniName(iniName);
+			act.setActivityTopic(actTopic);
+			act.setActivityIntro(actIntro);
+			act.setActivityPicture(newFileName);
+			act.setPeopleNum(peopleNum);
+			act.setPeoNum(peoNum);
+			act.setAddress(actAdress);
+			act.setSignTime(actSignTime);
+			act.setActivityTime(actActTime);
+			act.setActivityState(actState);
+			act.setActivityAudit(actAudit);*/
+		}
+
+
+
+		if("college".equals(loginRole)){
+			College college=null;
+			college=(College) session.getAttribute("loginer");
+			iniID=college.getCollegeId();
+			iniType="学院";
+			iniName=college.getCollegeName();
+		}
+		if("committee".equals(loginRole)){
+			Committee committee=null;
+			committee=(Committee)session.getAttribute("loginer");
+			iniID=committee.getCommitteeId();
+			iniType="团委";
+			iniName=committee.getCommitteeName();
+		}
+
+		act.setClaId(actClass1);
 		act.setActivityName(actName);
-		act.setIniId(iniid);
+		act.setIniId(iniID);
 		act.setIniType(iniType);
 		act.setIniName(iniName);
 		act.setActivityTopic(actTopic);
 		act.setActivityIntro(actIntro);
-		//act.setActivityPicture(actImage);
+		act.setActivityPicture(newFileName);
 		act.setPeopleNum(peopleNum);
 		act.setPeoNum(peoNum);
 		act.setAddress(actAdress);
@@ -79,21 +129,6 @@ public class releaseActivityServlet extends HttpServlet {
 		act.setActivityTime(actActTime);
 		act.setActivityState(actState);
 		act.setActivityAudit(actAudit);
-
-
-
-		UpdateUtil updateUtil=new UpdateUtil(this,request);
-		String newFileName="" ;
-		try {
-			newFileName=updateUtil.processUploadedFile("img","frontimages");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		//设置新的文件名,并保存到数据库
-		act.setActivityPicture(newFileName);
-
-
-
 		try {
 			dao.insertNewAct(act);
 		} catch (Exception e) {

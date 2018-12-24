@@ -6,6 +6,7 @@ public class Student {
 	private String stuNo;
 	private String stuPwd;
 	private String stuName;
+	private String stuNickName;
 	private String stuSex;
 	private String hobby;
 	private String picture;
@@ -49,6 +50,14 @@ public class Student {
 
 	public void setStuName(String stuName) {
 		this.stuName = stuName;
+	}
+
+	public String getStuNickName() {
+		return stuNickName;
+	}
+
+	public void setStuNickName(String stuNickName) {
+		this.stuNickName = stuNickName;
 	}
 
 	public String getStuSex() {

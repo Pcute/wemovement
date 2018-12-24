@@ -35,7 +35,8 @@
             <div class="tab" id="top-2-1">
                 <ul>
                     <li> <strong>活动分类：</strong> </li>
-                    <li class="active"><a href="javascript:void(0)" id="defaultOpen" class="tablinks" onClick="openCom(event,'theory')" style="margin-left:30px;">思想政治与道德修养</a><span></span></li>
+                    <li class="active"><a href="javascript:void(0)" id="defaultOpen" class="tablinks" onClick="openCom(event,'all')" style="margin-left:30px;">全部</a><span></span></li>
+                    <li><a href="javascript:void(0)" class="tablinks" onClick="openCom(event,'theory')" style="margin-left:30px;">思想政治与道德修养</a><span></span></li>
                     <li><a href="javascript:void(0)" class="tablinks" onClick="openCom(event,'volunteer')" style="margin-left:30px;">社会实践与志愿服务</a><span></span></li>
                     <li><a href="javascript:void(0)" class="tablinks" onClick="openCom(event,'academic')" style="margin-left:30px;">学术科技与创新创业</a><span></span></li>
                     <li><a href="javascript:void(0)" class="tablinks" onClick="openCom(event,'art')" style="margin-left:30px;">文化艺术与身心发展</a><span></span></li>
@@ -63,6 +64,23 @@
             evt.currentTarget.className += " active";
         }
     </script>
+    <%--全部活动--%>
+    <div id="all" class="tabcontent">
+        <div class="by-2" style="margin-bottom:10px;">
+            <span style="font-size:20px;"><strong></strong></span>
+        </div>
+        <div class="by-3" style="margin-top:20px;">
+            <c:forEach var="all" items="${actlistAll}">
+                <div class="by-3a">
+                    <a href="activityintro.do?id=${all.activityId}" ><img style="margin-bottom:15px; border-radius:10px;" src="${all.activityPicture}" width="200" height="100">
+                        <p><strong>${all.activityName}</strong></p>
+                        <font size="-1" color="#999999">活动时间:${all.activityTime}</font>
+                        <p><font color="#999999" size="-1">${all.activityIntro}</font></p>
+                    </a>
+                </div>
+            </c:forEach>
+        </div>
+    </div>
         <%--思想政治与道德修养--%>
     <div id="theory" class="tabcontent">
         <div class="by-2" style="margin-bottom:10px;">
@@ -79,7 +97,6 @@
                 </div>
             </c:forEach>
         </div>
-
     </div>
     <%--社会实践与志愿服务--%>
     <div id="volunteer" class="tabcontent">

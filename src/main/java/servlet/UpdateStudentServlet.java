@@ -29,7 +29,7 @@ public class UpdateStudentServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		//设置新的文件名,并保存到数据库
-		String stusex=request.getParameter("sex");
+		String stusex=updateUtil.processFormField("sex");
 		String hobby=request.getParameter("hobby");
 		String tele=request.getParameter("tele");
 
