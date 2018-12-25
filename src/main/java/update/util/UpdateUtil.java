@@ -1,6 +1,7 @@
 package update.util;
 
 import java.io.File;
+import java.io.UnsupportedEncodingException;
 import java.util.Iterator;
 import java.util.List;
 import java.util.UUID;
@@ -61,7 +62,12 @@ public class UpdateUtil {
 				String name = item.getFieldName();
 				//不区分大小写
 				if (name.equalsIgnoreCase(fieldname)) {
-					value = item.getString();
+					try {
+						value = item.getString("utf-8");//统一设置成UTF-8格式，即从客户端获取的String类型转到服务器变成UTF-8格式
+					} catch (UnsupportedEncodingException e) {
+						e.printStackTrace();
+						value=item.getString();
+					}
 				}
 			}
 		}

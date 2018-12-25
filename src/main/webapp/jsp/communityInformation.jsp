@@ -7,6 +7,7 @@
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>微动</title>
@@ -96,9 +97,9 @@
                 <div class="col-lg-8">
                     <h4><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> : ${communityintro.communityAddress}江西师范大学先骕楼x3513a</h4>
                 </div>
-                <div class="col-lg-4">
+                <%--<div class="col-lg-4">
                     <h5><span class="glyphicon glyphicon-pencil" aria-hidden="true"><a href="#" data-toggle="tooltip" title="点击跳转到信息修改页面">点击修改社团信息</a></span></h5>
-                </div>
+                </div>--%>
             </div>
         </div>
     </div>
@@ -107,7 +108,7 @@
     <hr>
     <div class="row">
         <div class="col-sm-12 col-lg-12">
-            <h3>正在举办的活动</h3><h4 class="text-right">
+            <h3>正在举办的活动</h3>
             <hr>
             <c:forEach var="ongoing" items="${newActivity}">
             <div class="row">
@@ -116,7 +117,7 @@
                     <h4 class="text-left"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>${ongoing.activityTime} 2018.5.6-2018.5.12</h4>
                 </div>
             </div>
-            <h4><span class="label label-default">活动详情</span><span class="label label-default" style="margin-left: 10px;"><a href="#">修改活动信息</a></span><span class="label label-default" style="margin-left: 10px;"><a href="#">参加活动</a></span></h4>
+            <h4><a href="activityintro.do?id=${ongoing.activityId}"><span class="label label-default">活动详情</span></a><span class="label label-default" style="margin-left: 10px;"><a href="activityintro.do?id=${ongoing.activityId}">参加活动</a></span></h4>
             <p>${ongoing.activityIntro}获取自由的萨拉查肆虐加勒比海，征服了整个海域，即便是手刃了“黑胡子”爱德华·蒂奇（伊恩·麦柯肖恩 Ian McShane 饰）的海盗王赫克托·巴博萨船长（杰弗里·拉什 Geoffrey Rush 饰）也难以避免心爱的安妮女王复仇号沉入大海的惨剧。</p>
             </c:forEach>
             <%--<div class="row">
@@ -153,7 +154,7 @@
                         <h4 class="text-left"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>${past.activityTime} 2018.10.1-2018.12.1</h4>
                     </div>
                 </div>
-                <h4><span class="label label-default">活动详情</span></h4>
+                <h4><a href="activityintro.do?id=${past.activityId}"><span class="label label-default">活动详情</span></a></h4>
                 <p>${past.activityIntro}心理活动是大脑对客观世界反映的过程。心理活动与大脑的高级神经活动是脑内同一生理过程的不同方面：从兴奋与抑制相互作用而构成的生理过程看，是高级神经活动</p>
             </div>
         </c:forEach>

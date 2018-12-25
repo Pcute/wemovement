@@ -45,6 +45,8 @@ public class releaseActivityServlet extends HttpServlet {
 		String actClass=updateUtil.processFormField("actClass");
 		int actClass1=Integer.parseInt(actClass);//转换成int型
 		String actName=updateUtil.processFormField("actName");
+
+		System.out.println("actName"+actName);
 		//int iniID=1;//int iniID=community.getCommunityId();
 		//String iniType="社团";
 		//String iniName="吉他社";//community.getCommunityName();
@@ -59,7 +61,7 @@ public class releaseActivityServlet extends HttpServlet {
 		//取图片,设置新的文件名，并保存的数据库
 		String newFileName="" ;
 			try {
-				newFileName=updateUtil.processUploadedFile("actImage","frontimages");
+				newFileName=updateUtil.processUploadedFile("actImage","frontimages");//只是把图片放到frontimages文件夹下
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -124,7 +126,7 @@ public class releaseActivityServlet extends HttpServlet {
 		act.setIniName(iniName);
 		act.setActivityTopic(actTopic);
 		act.setActivityIntro(actIntro);
-		act.setActivityPicture(newFileName);
+		act.setActivityPicture("frontimages/"+newFileName);//文件相对路径
 		act.setPeopleNum(peopleNum);
 		act.setPeoNum(peoNum);
 		act.setAddress(actAdress);

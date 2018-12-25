@@ -24,10 +24,11 @@ public class RecordDAOimplTest {
 		Record record=new Record();
 		record.setStuId(1);
 		record.setActId(1);
+		record.setRecordType("活动");
 		record.setSignTime("2018-12-25");
 		record.setRecordAudit("已通过");
 		record.setRecordResult("已参加");
-		record.setRecordStatus("良好");
+		record.setRecordStatus("hahahhaa");
 		try {
 			dao.insert(record);
 		} catch (Exception e) {

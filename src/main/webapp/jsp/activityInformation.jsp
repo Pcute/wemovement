@@ -11,6 +11,7 @@
 %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <base href="<%=basePath%>">
@@ -98,11 +99,13 @@
                         <h4><span class="glyphicon glyphicon-time" aria-hidden="true"> 时间：${actintro.activityTime}2018.12.12-2018.12.13</span></h4>
                     </div>
                     <div class="col-lg-12">
-                        <h4><span class="glyphicon glyphicon-heart" aria-hidden="true"> 报名人数：<span>38</span>/<span>40</span></span></h4>
+                        <h4><span class="glyphicon glyphicon-heart" aria-hidden="true"> 报名人数：<span>${actintro.peoNum}</span>/<span>${actintro.peopleNum}</span></span></h4>
                     </div>
                 </div>
                 <div  class="row text-right">
-                    <from action="enroll.do" method="post" name="enroll">
+                    <from action="enroll.do?id=${ActId.activityId}" method="post" name="enroll">
+                        <%--<from action="enroll.do?id=${actID.activityId}&act=${actintro}" method="post" name="enroll">--%>
+                        <%--传多个参数的正确用法--%>
                         <button class="btn btn-primary btn-lg" type="submit" id="b1" name="" onClick="myFunction()">
                             <span class="glyphicon">我要报名</span>
                         </button>

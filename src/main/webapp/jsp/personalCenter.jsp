@@ -11,6 +11,7 @@
 %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <base href="<%=basePath%>">
@@ -80,6 +81,7 @@
                 <div class="info">
                     <tr>
                         <td>我的收藏</td>
+                        <h1>uieureioreioreior</h1>
                     </tr>
 
                 </div>
@@ -100,7 +102,24 @@
 
                 </div>
             </div>
+            <div  class="list">
+                <div class="info">
+                    <tr>
+                        <td>参加过得活动</td>
+                    </tr>
+                </div>
+            </div>
+            <div  class="list">
+                <div class="info">
+                    <tr>
+                        <td>我的素拓表</td>
+                        <p>iyreiryeirei</p>
+                    </tr>
+                </div>
+            </div>
         </div>
+
+    </div>
         <script>
             $(function(){
                 //获取点击事件的对象

@@ -34,7 +34,7 @@ public class CommunityInformationIdexServlet extends HttpServlet {
 			System.out.println(community.getCommunityName());
 			request.setAttribute("newActivity",Newactivities);
 			request.setAttribute("oldActivity",Oldactivities);
-			request.getRequestDispatcher("/jsp/communityCenter.jsp").forward(request,response);
+			request.getRequestDispatcher("/jsp/communityInformation.jsp").forward(request,response);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

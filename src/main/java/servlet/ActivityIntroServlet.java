@@ -28,6 +28,7 @@ public class ActivityIntroServlet extends HttpServlet {
 		try {
 			Activity act=dao.getActIntro(id);
 			request.setAttribute("actintro",act);
+			//request.setAttribute("ActId",id);
 			request.getRequestDispatcher("/jsp/activityInformation.jsp").forward(request,response);
 		} catch (Exception e) {
 			e.printStackTrace();
