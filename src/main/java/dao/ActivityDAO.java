@@ -2,6 +2,7 @@ package dao;
 
 import domain.Activity;
 
+import java.sql.Connection;
 import java.util.Date;
 import java.util.List;
 
@@ -16,5 +17,5 @@ public interface ActivityDAO {
 	public List<Activity> getNewAct(int comId) throws Exception;//通过社团id获取正在举办的活动详细信息
 	public List<Activity> getOldAct(int comId) throws Exception;//通过社团id获取已经举办的活动详情信息
 
-	public void updateSignNum(int actId) throws Exception;//学生报名之后修改报名人数信息,公用一个connection链接
+	public void updateSignNum(int actId, Connection conn) throws Exception;//学生报名之后修改报名人数信息,公用一个connection链接
 }

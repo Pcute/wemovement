@@ -35,7 +35,7 @@ public class CommunityCenterServlet extends HttpServlet {
 			List<Activity> Newactivities =dao1.getNewAct(id);
 			List<Activity> Oldactivities =dao1.getOldAct(id);
 			request.setAttribute("communityintro",community);
-			System.out.println(community.getCommunityName());
+			//System.out.println(community.getCommunityName());
 			request.setAttribute("newActivity",Newactivities);
 			request.setAttribute("oldActivity",Oldactivities);
 			request.getRequestDispatcher("/jsp/communityCenter.jsp").forward(request,response);

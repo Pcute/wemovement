@@ -103,27 +103,31 @@
                     </div>
                 </div>
                 <div  class="row text-right">
-                    <from action="enroll.do?id=${ActId.activityId}" method="post" name="enroll">
+                    <form action="enroll.do" method="post" name="enroll">
                         <%--<from action="enroll.do?id=${actID.activityId}&act=${actintro}" method="post" name="enroll">--%>
-                        <%--传多个参数的正确用法--%>
+                        <%--传多个参数--%>
+                            <input type="text" name="id" style="display: none" value="${actintro.activityId}"/>
+
                         <button class="btn btn-primary btn-lg" type="submit" id="b1" name="" onClick="myFunction()">
                             <span class="glyphicon">我要报名</span>
                         </button>
-                    </from>
+                    </form>
+
                     <!--禁用属性class="disabled",document.getElementByIdx_x_x("btnShow").disabled=true; // 禁用。
             $('button').prop('disabled', true); // 按钮灰掉，且不可点击。-->
-                    <from>
+                    <form>
                         <button class="btn btn-primary btn-lg" name="" type="button">
                             <span class="glyphicon glyphicon-star-empty">收藏活动</span>
                         </button>
-                    </from>
+                    </form>
                     <p id="demo" style="margin-top: 15px"><span class="label label-default"><font size="-1">您还没有报名..</font></span></p>
                     <script>
                         function myFunction(){
                             var x;
                             var r=confirm("您确认要报名");
                             if (r==true){
-                                x="您以成功报名";
+                               // x="您已成功报名";
+                                document.enroll.submit();
                                 document.getElementById("b1").disabled=true;
                             }
                             else{
@@ -167,16 +171,16 @@
             <div class="col-xs-1"></div>
             <div class="col-xs-4 panel panel-default">
                 <div class="panel-heading">
-                    <h3 class="panel-title"> 活动所属社团介绍</h3>
+                    <h3 class="panel-title"> 活动所属方介绍</h3>
                 </div>
                 <div class="panel-body text-center">
                     <div class="row">
                         <div class="col-lg-12 ">
-                            <img src="u=1792545078,3152700174&fm=26&gp=0.jpg" class=" img-responsive center-block" alt="no" width="200px" height="100px" />
-                            <h4> <span>心理社团</span></h4>
+                            <img src="${comintro.communityPicture}" class=" img-responsive center-block" alt="no" width="200px" height="100px" />
+                            <h4> <span>${comintro.communityName}心理社团</span></h4>
                         </div>
                         <div class="col-lg-12">
-                            <h5><span>协会主要以丰富多彩的户外活动为主，辅以心理讲座...>><span class="glyphicon glyphicon-home" style="color:aqua"><a style="color: aqua" href="#">进社团</a></span></span></h5>
+                            <h5><span>${comintro.communityIntro}协会主要以丰富多彩的户外活动为主，辅以心理讲座...<span class="glyphicon glyphicon-home" style="color:aqua"><a style="color: aqua" href="communityinformationindex.do?id=${comintro.communityId}">点击进入</a></span></span></h5>
                         </div>
                     </div>
                 </div>

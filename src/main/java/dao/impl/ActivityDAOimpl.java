@@ -163,7 +163,7 @@ public class ActivityDAOimpl implements ActivityDAO {
 		ResultSet rs=null;
 		try {
 			conn=JDBCUtil.getconn();
-			String sql="select activity_name,ini_id,ini_type,ini_name,activity_topic,activity_intro,activity_picture,people_num,peo_num,address,sign_time,activity_time,activity_state,activity_audit\n" +
+			String sql="select activity_name,ini_id,ini_type,ini_name,activity_topic,activity_intro,activity_picture,people_num,peo_num,address,sign_time,activity_time,activity_state,activity_audit,activity_id\n" +
 					"from activity where activity_id=?";
 			ps=conn.prepareStatement(sql);
 			ps.setObject(1,id);
@@ -183,6 +183,7 @@ public class ActivityDAOimpl implements ActivityDAO {
 				act.setActivityTime(rs.getString(12));
 				act.setActivityState(rs.getString(13));
 				act.setActivityAudit(rs.getString(14));
+				act.setActivityId(rs.getInt(15));
 			}
 		}catch (Exception e){
 			e.printStackTrace();
@@ -333,8 +334,8 @@ public class ActivityDAOimpl implements ActivityDAO {
 	}
 
 	@Override
-	public void updateSignNum(int actId) throws Exception {
-		Connection conn=null;
+	public void updateSignNum(int actId,Connection conn) throws Exception {
+		//Connection conn=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
 		try {

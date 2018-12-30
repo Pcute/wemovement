@@ -2,8 +2,10 @@ package dao.impl;
 
 import dao.ActivityDAO;
 import domain.Activity;
+import jdbc.util.JDBCUtil;
 import org.junit.Test;
 
+import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -114,7 +116,8 @@ public class ActivityDAOimplTest {
 	public void updateSignNum(){
 		ActivityDAO dao=new ActivityDAOimpl();
 		try {
-			dao.updateSignNum(1);
+			Connection conn= JDBCUtil.getconn();
+			dao.updateSignNum(1,conn);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -43,8 +43,8 @@ public class RecordDAOimpl implements RecordDAO {
 	}
 
 	@Override
-	public Record insert(Record record) throws Exception{
-		Connection conn=null;
+	public Record insert(Record record,Connection conn) throws Exception{
+		//Connection conn=null;
 		PreparedStatement ps=null;
 		ResultSet rs=null;
 		try {

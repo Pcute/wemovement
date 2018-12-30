@@ -102,6 +102,37 @@ public class CommunityDAOimpl implements CommunityDAO {
 	}
 
 	@Override
+	public Community getCommIntroByActId(int id) throws Exception {
+		Connection conn=null;
+		PreparedStatement ps=null;
+		ResultSet rs=null;
+		try {
+			conn= JDBCUtil.getconn();
+			String sql="select distinct community_id,type_id,community_no,community_pwd,community_name,community_intro,community_picture,tele,community_address,email\n" +
+					"from community where community_id in (select ini_id from activity where activity_id=?)";
+			ps=conn.prepareStatement(sql);
+			ps.setObject(1,id);
+			rs=ps.executeQuery();
+			Community com=new Community();
+			while (rs.next()){
+				com.setCommunityId(rs.getInt(1));
+				com.setTypeId(rs.getInt(2));
+				com.setCommunityNo(rs.getString(3));
+				com.setCommunityPwd(rs.getString(4));
+				com.setCommunityName(rs.getString(5));
+				com.setCommunityIntro(rs.getString(6));
+				com.setCommunityPicture(rs.getString(7));
+				com.setTele(rs.getString(8));
+				com.setCommunityAddress(rs.getString(9));
+				com.setEmail(rs.getString(10));
+			}
+			return com;
+		}finally {
+			JDBCUtil.close(conn,ps,rs);
+		}
+	}
+
+	@Override
 	public int insert(Community community) {
 		String sql="insert into community(community_name,community_pwd,email,community_intro) value(?,?,?,?)";
 		Connection conn = null;
